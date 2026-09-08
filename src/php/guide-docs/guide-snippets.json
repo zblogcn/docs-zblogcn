@@ -1,0 +1,76 @@
+{
+  "include": {
+    "prefix": [
+      "include",
+      "inc_include"
+    ],
+    "body": [
+      "<!-- @include: ./$1.md -->"
+    ],
+    "description": "插入预定义内容片段（include/）"
+  },
+  "include_terms": {
+    "prefix": [
+      "include_terms",
+      "inc_terms"
+    ],
+    "body": [
+      "<!-- @include: ./terms/$1.md -->"
+    ],
+    "description": "插入预定义内容片段（terms/）"
+  },
+  "include_terms_path": {
+    "prefix": [
+      "include_terms_path",
+      "inc_terms_path"
+    ],
+    "body": [
+      "<!-- @include: ./terms/path.md -->"
+    ],
+    "description": "`path`的定义说明"
+  },
+  "include_terms_host": {
+    "prefix": [
+      "include_terms_host",
+      "inc_terms_host"
+    ],
+    "body": [
+      "<!-- @include: ./terms/host.md -->"
+    ],
+    "description": "`host`的定义说明"
+  },
+  "code": {
+    "prefix": [
+      "code",
+      "``"
+    ],
+    "body": " `${1:code}` ",
+    "description": "行内代码`code`"
+  },
+  "php": {
+    "prefix": [
+      "php"
+    ],
+    "body": [
+      "```php",
+      "$1",
+      "```"
+    ],
+    "description": "代码块 - PHP 语言"
+  },
+  "**注：**": {
+    "prefix": "**",
+    "body": "**注：$1**",
+    "description": "加粗内容「注：」"
+  },
+  "**重要：**": {
+    "prefix": "**",
+    "body": "**重要：$1**",
+    "description": "加粗内容「重要：」"
+  },
+  "vitepress": {
+    "prefix": "vitepress",
+    "body": "vitepress",
+    "description": "vitepress"
+  }
+}

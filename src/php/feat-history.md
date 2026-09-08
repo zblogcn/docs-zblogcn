@@ -1,0 +1,494 @@
+# 版本历史
+
+> 当前正式版本号为 `1.7.4`；
+>
+> 相关：[Z-Blog 开发大事记](https://www.zblogcn.com/about/ "Z-Blog开发大事记")
+
+# 1.7 Tenet
+
+- 1.7.4
+  - feat. 支持PHP 8.4
+  - feat. API错误响应中加入moreinfo字段。
+  - feat. 增加登录验证码和csrfToken校验，调整验证码有效期为5分钟，并修改crsf有效时间。
+  - feat. 引入ZC_VERIFYCODE_LENGTH, ZC_VERIFYCODE_MAXANGLE, 和 ZC_VERIFYCODE_MAXOFFSET配置项以增强验证码的安全性。
+  - feat. 删除misc模块并移除链接，减少不必要的资源加载。
+  - feat. 缩略图支持webp和avif格式，提高图片加载速度。
+  - feat. 添加Null2Empty函数用于处理空值情况。
+  - feat. 终结固定域名设置逻辑，优化后台样式。
+  - feat. 网络组件增加addQuery方法及更直观的addFormParam命名。
+  - feat. 支持两种形式的UPDATE语句增量操作。
+  - feat. ShowError函数增加参数，以便于找不到API时提供更多信息。
+  - feat. API错误响应中加入moreinfo字段。
+  - feat. NetWork组件支持PUT上传文件。
+  - feat. 引入ZC_COMMENT_ORDERBY_TIME配置项，默认关闭，影响评论排序。
+  - feat. 引入ZC_LOGS_MORE_INFO设置，控制日志详细程度。
+  - feat. 用户编辑资料时不再强制要求填写邮箱。
+  - fix. 解决模块重复拖动至同一侧栏的问题。
+  - fix. 修正缩略图中文显示问题。
+  - fix. 处理PHP版本低于8时API错误的情况。
+  - fix. 解决php8中trim类函数不支持null的问题。
+  - fix. 修正login.php提交密码原文的问题。
+  - fix. 兼容Module的FileName大小写问题。
+  - fix. 修复固化域名显示script的问题。
+  - fix. 补全VerifyLogin中的缺失代码。
+  - fix. 改进ApiCheckMods报错提示。
+  - fix. 加强外链跳转的安全措施。
+  - fix. 在发表评论时添加对post ID存在的检查。
+  - fix. 修正GetGuestIP逻辑，默认读取remote_addr。
+    
+- 1.7.3
+  - feat. 添加API
+  - feat. 支持PHP 8.2
+  - feat. 更新jQuery及相关库
+  - feat. 增加完善加密类函数
+  - fix. 完善错误处理机制
+  - fix. 完善API（如ApiExecute调用API等）
+  - fix. 完善调整插件体系
+  - fix. 修复数据库驱动问题
+
+- 1.7.2
+  - feat. 后台自适应，增加了后台的手机横版操作支持
+  - feat. 支持 Swoole、WorkerMan、WebMan 集成调用 ZBP
+  - feat. ZBP 类增加了魔术方法，新建自定义类时支持 $zbp->GetXXXList,GetXXXByID,GetXXXByArray 读取
+  - feat. 现在 Base 类的 Update 操作不再提交未更改的字段
+  - feat. ZBP 类的 GetXXXList 之类的方法，在读取对象时会优先从全局缓存数组取得
+  - feat. Base 类及其派生类在 Del 方法执行删除成功后，会从全局缓存数组中删除该对象
+  - feat. Post 类的 Time() 方法的参数顺序改回了 1.6 的顺序
+  - feat. 增加了 zbplangs 类用于 $zbp->langs 的链式表达
+  - feat. 置顶分类的文章可以出现在其上级分类里了
+  - feat. cmd.php 里对跳转流程做了更新
+  - feat. 大修 ZBlogException 类
+  - feat. API 支持输出自定义格式的内容
+  - feat. route.php 里对路由系统做了调整和优化
+  - feat. 修改 c_option.php 里的 ZC_DATABASE_CONFIG 为 getenv 或 env，可以从 getenv 或 $_ENV 中读取 ZC_MYSQL_NAME 等参数的值;
+  - feat. API 的流程修改,增加 ApiShowError 函数并挂上接口
+  - feat. 修改 ViewFeed 适应路由,增加 ViewList,ViewPost 的权限判断
+  - fix. 修复了 1.6 升级到 1.7 数据库 config 数据出错、程序崩溃的问题
+  - fix. 后台刷新统计操作可以打开 ZC_LARGE_DATA 参数 去屏蔽可能的耗时操作
+  - fix. ViewPost 里修正了一个文章伪静的 url 检测问题和一个水水发现的 Bug
+  - fix. common.php 下增加了 Is_Mobile 函数，改进了 Logs_Dump、GetVars、GetIDArrayByList 函数
+  - fix. 修改了一个管理员信息被编辑的问题
+  - fix. RSS 输出增加了一个参数设置，并默认排序为 PostTime
+  - 接口
+    - feat. 增加 Clear_Filter_Plugin 函数
+    - feat. 增加 PLUGIN_EXITSIGNAL_GOTO 常量
+    - feat. Filter_Plugin_Zbp_Load_Pre 这个接口重新给挪回到 zbp 的 Load 方法里了
+    - feat. 删除接口 Filter_Plugin_Zbp_LoadLanguage
+    - feat. 新增接口 Filter_Plugin_Zbp_RegBuildModules
+    - feat. 新增接口 Filter_Plugin_Cmd_Redirect 用于接管 cmd 下的 url 跳转
+    - feat. 新增接口 Filter_Plugin_ViewPost_ViewNums 用于插入一个自定义的浏览数计数方案
+    - feat. 新增接口 Filter_Plugin_API_Post_List_Core
+    - feat. 新增接口 Filter_Plugin_API_Pre_Response_Raw
+
+- 1.7.1
+  - update. 支持`PHP 8.1`版本
+  - fix. 模板类能更好的支持多套模板
+  - fix. 对 **API** 进行了修复和完善
+  - feat. 继续调整和完善了路由系统和 PostType 的配置和读取
+  - fix. Base 类,Config 类,Metas 类,Post 类等进行了修复和改进
+  - feat. 对报错页面的错误查询进行了修改，改为 bing.com 查询
+  - fix. 对所有的数据库驱动进行了修复，特别是大修了 pgsql 驱动
+  - feat. ZBP 类增加了 manageorder 和 displayorder 属性，进行排序设置
+  - fix. 现在删除用户默认不删除其文章和评论
+  - fix. 修正了一个千年老虫,在 PHP CLI 下输出 $blogpath 不正常的问题
+  - fix. 简单的修复了后台管理里会出现负数的问题
+  - 接口
+    - feat. 新增接口 Filter_Plugin_API_Result_Data
+    - feat. 修改接口名 Filter_Plugin_API_ListCheck 为 Filter_Plugin_API_CheckMods
+
+- 1.7.0 [详细](https://blog.zblogcn.com/2021/02/08/117/ "1.7.0 Tenet")
+  - 重要更新
+  - feat. 增加「链式 SQL」查询功能；「[链式 SQL](/php/dev-chainquery "API文档")」
+  - feat. 增加 API 功能；「[API 文档](/php/api-design "API文档")」
+  - feat. 字体图标；「[Z-Blog icons demo](https://static.zblogcn.com/image/icon/demo.html "Z-Blog icons demo")」
+  - feat. 内置缩略图基类；「[zblogcn/zblogphp/search?q=Thumb](https://github.com/zblogcn/zblogphp/search?q=Thumb "Search · Thumb")」
+  - feat. 全新的可配置的 URL 路由机制；
+  - 更新
+  - feat. 增加了 view, api, CategoryNew, ArticleNew, PageNew, PostBat 等命令
+  - feat. 增加对 PostgreSql 数据库的支持
+  - feat. 将 Post 类和 Member 类分离成 BasePost 和 BaseMember 基类，后续版本会分离更多
+  - feat. Base 类增加了 Clone, UnsetData, GetOriginal 方法,
+  - fix. 修复了 ZBP 类 的总对象缓存
+  - feat. ZBP 类增加了 isapi, isdebug, islogin, ishttps 等指示属性
+  - feat. ZBP 类增加了 PreLoad 过程在 Load 过程之前，所属接口一并调整
+  - feat. ZBP 类增加了 cachedir,logsdir,datadir,systemdir,admindir,userurl,adminur,systemurl 属性，并将 t 引用自 table,d 引用自 datainfo
+  - feat. 文章编辑器接口增加`barBtn`；「[zblogcn/zblogphp/search?q=barBtn](https://github.com/zblogcn/zblogphp/search?q=barBtn "Search · barBtn")」
+  - feat. 文章编辑器接口增加`ready`；「[zblogcn/zblogphp/search?q=ready](https://github.com/zblogcn/zblogphp/search?q=barBtn "Search · ready")」
+  - 接口
+    - feat. 新增接口 Filter_Plugin_Zbp_PreLoad
+    - feat. 新增接口 Filter_Plugin_Zbp_PrepareTemplate
+    - feat. 新增接口 Filter_Plugin_Zbp_LoadLanguage
+    - feat. 新增接口 Filter_Plugin_Admin_Hint
+    - feat. 新增接口 Filter_Plugin_Admin_ArticleMng_Core
+    - feat. 新增接口 Filter_Plugin_Admin_PageMng_Core
+    - feat. 新增接口 Filter_Plugin_Admin_CommentMng_Core
+    - feat. 新增接口 Filter_Plugin_Admin_CategoryMng_Core
+    - feat. 新增接口 Filter_Plugin_Admin_MemberMng_Core
+    - feat. 新增接口 Filter_Plugin_Admin_UploadMng_Core
+    - feat. 新增接口 Filter_Plugin_Admin_TagMng_Core
+    - feat. 新增接口 Filter_Plugin_VerifyLogin_Failed
+    - feat. 新增接口 Filter_Plugin_OutputOptionItemsOfMember_Begin
+    - feat. 新增接口 Filter_Plugin_OutputOptionItemsOfPostStatus
+    - feat. 新增接口 Filter_Plugin_OutputOptionItemsOfIsTop
+    - feat. 新增接口 Filter_Plugin_OutputOptionItemsOfMember
+    - feat. 新增接口 Filter_Plugin_OutputOptionItemsOfTemplate
+    - feat. 新增接口 Filter_Plugin_OutputOptionItemsOfCommon
+    - feat. 新增接口 Filter_Plugin_ViewList_Begin_V2
+    - feat. 新增接口 Filter_Plugin_ViewPost_Begin_V2
+    - feat. 新增接口 Filter_Plugin_PostUpload_Succeed
+    - feat. 新增接口 Filter_Plugin_PostPost_Core
+    - feat. 新增接口 Filter_Plugin_DelPost_Core
+    - feat. 新增接口 Filter_Plugin_PostPost_Succeed
+    - feat. 新增接口 Filter_Plugin_DelPost_Succeed
+    - feat. 新增接口 Filter_Plugin_EnablePlugin
+    - feat. 新增接口 Filter_Plugin_DisablePlugin
+    - feat. 新增接口 Filter_Plugin_BatchPost
+    - feat. 新增接口 Filter_Plugin_Post_Thumbs
+    - feat. 新增接口 Filter_Plugin_Upload_Del
+    - feat. 新增接口 Filter_Plugin_Template_Display
+    - feat. 新增接口 Filter_Plugin_API_Response
+    - feat. 新增接口 Filter_Plugin_API_Begin
+    - feat. 新增接口 Filter_Plugin_API_Dispatch
+    - feat. 新增接口 Filter_Plugin_API_Extend_Mods
+    - feat. 新增接口 Filter_Plugin_API_ListCheck
+    - feat. 新增接口 Filter_Plugin_API_Get_Request_Filter
+    - feat. 新增接口 Filter_Plugin_API_Get_Pagination_Info
+    - feat. 新增接口 Filter_Plugin_API_Get_Object_Array
+    - feat. 新增接口 Filter_Plugin_API_VerifyCSRF_Skip
+  - 数据库
+    - 数据库组件增加事务处理命令和 ExistColumn 字段存在判断
+    - feat. Config 表重大更新，原子化设计，增加了 key 字段
+    - feat. Post 表和 Membar 表增加了 UpdateTime 和 CreateTime 字段
+    - feat. Tag 表和 Category 表增加了 Group 字段
+  - 删除
+    - remove. 移除固定域名功能至隐藏设置中
+
+# 1.6 Valyria
+
+- 1.6.8
+  - update. 支持了 1.7.0 的全新的 Config 类的数据结构
+  - fix. 修复了 1.6.7 升级 1.7.0 后再退回 1.6.7 时会出现严重的 config 表数据错误
+- 1.6.6 [详细](https://blog.zblogcn.com/2020/12/01/115/ "1.6.6")
+  - fix. 针对 `PHP 7+` 的数据库连接改进；
+  - feat. `PHP 8.0` 支持；
+  - update.`cmd.php` 内增加 `ZBP_IN_CMD` 常量；
+- 1.6.5 [详细](https://blog.zblogcn.com/2020/09/01/113/ "1.6.5")
+  - fix. `xml-rpc` 接口 Bug 修复；
+  - fix. 「Tag」重复创建修复；
+  - update. 搜索结果排序支持（接口）；
+  - update. 验证码；
+  - update. `SQLite`命名前缀规范（新装）；
+  - update. 「config」调整（1.7 准备）；
+- 1.6.4
+  - update. 前台和后台 js.php 文件默认启用了 http304 功能
+  - fix. 修正了访客发表评论后不能记住信息的问题
+  - fix. 修正了网络类组件 POST 时的一个问题
+  - fix. sqlite3 组件的一个 bug 修复
+  - update. 删除 post 表的一个无用索引
+- 1.6.0
+  - 重要更新
+  - update. 支持 PHP 7.4
+  - update. 增加新默认主题 Zit 和 tprue
+  - update. 增加链接管理插件
+  - update. 侧栏数量增加至 9 个
+  - update. 允许从 CDN 获取访客 IP
+  - update. 美化 ZB 后台和安装界面的样式
+  - 更新
+  - update. 文章发布，选择模板过滤不适用于文章的模板
+  - update. #98 PageBar 语言包化
+  - update. #240 设置固定域名时新增验证
+  - update. c_option.php 增加了专属参数 ZC_PERMANENT_DOMAIN_WHOLE_DISABLE 可以强制关闭固定域名
+  - update. c_option.php 增加了专属参数 ZC_PERMANENT_DOMAIN_FORCED_URL 可以强制指定域名
+  - update. #238 关闭网站时返回 503 状态码
+  - 修复
+  - fix. 修正一些安全问题
+  - fix. 模块管理里现在只显示当前主题创建的模块，不再显示其它主题创建的模块
+  - fix. 用户编辑里可以搜索用户别名
+  - fix. 后台编辑页所显示的模板会被强制排除某些名字开头的文件
+  - fix. #243 修复 author.Comments 获取的用户评论为 0 的 BUG
+  - fix. #236 修复用户名小于 3 位无法安装的问题
+  - 开发
+  - feat. 搜索增加 List 模式，支持分页，List 模式优先选用 search 做模板页
+  - feat. Base 类增加了 SetData 方法，增加了 GetData 类方法的参数
+  - feat. #232 Base 类添加 LoadInfoByFields / LoadInfoByField 接口
+  - feat. Z-BlogPHP JavaScript Framework 增强
+  - feat. RemovePHPCode 函数，用于清除字符串里所有可能的 PHP 代码
+  - feat. 增加 $zbp→langs 用于替代 lang
+  - feat. 应用中心打包时会读取 zbignore.txt 文件，允许打包时对某些文件进行忽略。
+  - feat. 主题创建模块的 Source 一律要设置为 theme*主题 ID，以前有用 plugin*主题 ID 需要改正
+  - feat. 主题 Include 文件夹下的文件型模块的 HtmlID 修正为其 FileName 值
+  - feat. sql 类增加对 decimal 的支持
+  - feat. $zbp 新增设置互斥和查询互斥函数，最先应用于 Zit 主题和 AdminColor 插件上
+  - 接口
+    - feat. #245 Filter_Plugin_ViewList_Template 增加退出信号
+    - feat. 新增 SetPluginSignal 设置信号函数
+    - feat. 新增 Filter_Plugin_ViewPost_Core 接口
+    - feat. 新增 Filter_Plugin_ViewSearch_Template 接口
+    - feat. #206 新增 Filter_Plugin_CheckComment_Core 接口
+    - feat. #206 新增 Filter_Plugin_CheckComment_Succeed 接口
+    - feat. 新增 Filter_Plugin_EnablePlugin 接口
+    - feat. 新增 Filter_Plugin_DisablePlugin 接口
+    - feat. 新增 Filter_Plugin_Admin_Other_Action 接口
+    - feat. #249 编辑器增加 insert 接口支持
+  - 数据库
+    - update. zbp_config 表 conf_Value 长度扩大
+    - update. 对于系统内所有 varchar 字段全部扩大最大长度
+    - update. 新增 tag_Type 字段
+    - update. 新增 cate_Type 字段
+  - fix. 修复 Network\_\_curl 不处理 GET / POST 以外的 method 的问题
+  - fix. #224 修复批量操作评论时 id 为空时的错误
+  - fix. #225 修复了文章获取下一篇接口的错误
+  - update. 增强了@的错误处理！
+  - remove. 废弃 TransferHTML 函数，使用 FormatString 取代。（暂不需要修改）
+  - remove. 废弃 ZBPJF 的旧有接口（请参照后续迁移说明）
+  - remove. 去除 HHVM 支持
+  - remove. ZC_YUN_SITE 彻底删除
+
+# 1.5 Zero
+
+- 1.5.2
+  - 安全支持
+  - feat. 增加“增强安全模式”
+  - update. 修复后台可能存在的安全隐患
+  - update. 调整密码验证方式
+  - 更新
+  - feat. 使用 PSR2 标准，格式化所有代码
+  - feat. 增加 CLI 支持
+  - fix. 修复绝大部分的 PHPDoc
+  - feat. 开发模式下自动编译主题
+  - feat. 子目录使用不同主题支持
+  - 接口
+    - feat. Filter_Plugin_ViewFeed_End
+    - feat. Filter_Plugin_App_Pack
+    - feat. Filter_Plugin_Comment_Get
+    - feat. Filter_Plugin_Comment_Set
+    - feat. Filter_Plugin_Module_Get
+    - feat. Filter_Plugin_Module_Set
+    - feat. Filter_Plugin_Upload_Get
+    - feat. Filter_Plugin_Upload_Set
+    - feat. Filter_Plugin_Post_Get
+    - feat. Filter_Plugin_Post_Set
+    - feat. Filter_Plugin_Category_Get
+    - feat. Filter_Plugin_Category_Set
+    - feat. Filter_Plugin_Tag_Get
+    - feat. Filter_Plugin_Tag_Set
+    - feat. Filter_Plugin_Member_Get
+    - feat. Filter_Plugin_Member_Set
+    - update. Filter_Plugin_ViewIndex_Begin 执行顺序
+  - 修复
+  - fix. #131, #132: 修正 c_system_misc 的设计缺陷
+  - fix. #133: Filter_Plugin_ViewPost_Template 接口中断
+  - fix. #134: ViewFeed 增加接口
+  - fix. #142: 依赖应用被停用时提醒
+  - fix. #151: 用户名包含@符号的问题
+  - fix. #155: 用户新建和编辑页面一个 class 错误
+  - fix. #160: 评论成功后的 location.hash
+  - fix. #162: page 不存在时应当返回 404
+  - fix. #163: 文章等选择模板的问题
+- 1.5.1
+  - 更新
+  - feat. xml-rpc 加入一次性 Token 支持。
+  - feat. 增加后台使用固定域名的设置。
+  - feat. #123: 后台增加当前页码显示。
+  - 修复
+  - update. 调整后台样式。
+  - update. 调整模块编辑的默认权限。
+  - update. 取消不能修改系统模块名称的限制。
+  - update. 增加对老版本 PCRE 的报错提示（for 美橙互联）。
+  - update. 修复某些情况下分类编辑不显示的问题。
+  - update. 修复 nginx 下 etag 不输出的问题。
+  - update. 修复编辑页面模板不显示的问题。
+  - update. 修复分类的 RootID 问题。
+  - update. 修复若干接口的执行顺序问题。
+  - update. 修复 phpunit 下 db 重复关闭的问题。
+  - update. #113: 调整域名保存与提交方案。
+  - update. #117: 昵称规则放宽，支持汉英以外的其他语言。
+  - update. #118: 修复分类删除后模块不更新问题。
+  - update. #120: 修复用户页伪静态通过别名实例化用户问题。
+  - update. #122: 更换系统原先的文件格式图标。
+  - update. 移除是否支持 HTML5 的配置。
+  - 开发
+  - update. 增加“最低 PHP 要求版本”“依赖函数”的可配置字段。
+  - update. 修复 IS_KANGLE、IS_CADDY、IS_BUILTIN。
+  - update. SQLGlobal 为保证兼容性与多表查询能力，删除所有的反引号。
+  - update. SQLGlobal 找回 ARRAY_LIKE。
+  - update. #121: SQLGlobal 增加 →new()方法以便子查询等使用。
+  - update. #124: 修复 AddHeaderIcon 失效的问题。
+  - 接口
+    - update. Filter_Plugin_Admin_ArticleMng_Table
+    - update. Filter_Plugin_Admin_PageMng_Table
+    - update. Filter_Plugin_Admin_CategoryMng_Table
+    - update. Filter_Plugin_Admin_CommentMng_Table
+    - update. Filter_Plugin_Admin_MemberMng_Table
+    - update. Filter_Plugin_Admin_UploadMng_Table
+    - update. Filter_Plugin_Admin_TagMng_Table
+    - update. Filter_Plugin_Xmlrpc_Begin
+    - update. Filter_Plugin_VerifyLogin_Succeed
+    - update. Filter_Plugin_Logout_Succeed
+    - update. Filter_Plugin_Category_Edit_SubMenu
+    - update. Filter_Plugin_Edit_SubMenu
+    - update. Filter_Plugin_Member_Edit_SubMenu
+    - update. Filter_Plugin_Module_Edit_SubMenu
+    - update. Filter_Plugin_Tag_Edit_SubMenu
+    - update. Filter_Plugin_Post_Prev
+    - update. Filter_Plugin_Post_Next
+    - update. Filter_Plugin_LargeData_Article
+- 1.5.0
+  - 更新
+  - update. Z-BlogPHP JavaScript Framework
+  - update. 重写评论返回功能
+  - update. 重写 Z-BlogPHP 前端函数
+  - update. 链式 SQL 调用
+  - update. 侧栏模板化、独立化
+  - update. 用户管理搜索
+  - update. 加强用户安全保护
+  - update. 数个数据库索引（调研自应用中心主题）
+  - update. 伪静态增加时间校验（防止重复 URL）
+  - update. 加强 HTTPS 支持
+  - update. 全局审核评论开关
+  - update. 验证码升级
+  - update. 304 Not Modified 开关
+  - update. 后台错误提示友好化
+  - update. #40：全局关闭网站开关
+  - update. #72：错误页面模板
+  - update. #73：模板注释
+  - update. #91：评论管理增加邮箱
+  - update. jQuery 自带 1.8.3 和 2.2.4 两个版本
+  - update. 语言显示改为合乎 BCP47 标准的语言显示方式
+  - update. 用户名支持【@】符号
+  - update. 后台取消对 IE8 的支持
+  - update. 默认主题多语言
+  - update. 主题文件编译目录
+  - update. 中文域名支持
+  - update. 伪静态地址唯一化
+  - update. #75：移动主题编译目录
+  - update. #87：安装页面文字描述
+  - 修复
+  - update. #10：修复分类名包含半角空格后伪静态出错问题
+  - update. #32：修复 HHVM 下部分行为异常问题
+  - update. #82：模板替换误判 ⇒
+  - update. 修复文章归档 maxli 未生效的问题
+  - update. 修复 amh 下无法读取 xml 的问题（http://amh.sh/bbs/post-7622-1-1.htm）
+  - 数据库
+    - update. #42：调整 MySQL 建表语句使其支持 utf8mb4，加入低版本 MySQL 兼容
+    - update. 删除 zbp_Counter 表
+  - update. 后台 JavaScript 未加载提示
+  - update. 上传过大应用提示
+  - update. 环境未安装提示
+  - update. 调整安装用户界面及使用协议
+  - update. 增加 mysql 组件淘汰机制，代之以 pdo_mysql 和 mysqli
+  - update. 调整后台斑马线
+  - update. #48：错误提示友好化
+  - update. 代码按 PSR-2 规范格式化
+  - update. 允许命令行调用
+  - update. 版本号规则修改
+  - 接口
+    - update. Filter_Plugin_PostTag_Core
+    - update. Filter_Plugin_PostTag_Succeed
+    - update. Filter_Plugin_Upload_Dir
+    - update. Filter_Plugin_ViewSearch_Core
+    - update. Filter_Plugin_ViewFeed_Core
+    - update. Filter_Plugin_ViewComment_Template
+    - update. Filter_Plugin_Debug_Display
+    - update. 新增调试模式错误堆栈跟踪
+
+# 1.4 Deeplue
+
+- 1.4
+  - 新增
+  - update.支持相对大的数据库
+  - update.支持 PDO_SQLite
+  - update.增加非固定域名的跳转
+  - update.支持多语言安装，加入英语语言包
+  - update.应用中心导出支持 gzip 压缩（gzba）
+  - update.#5: 增加分类和 Tags 编辑【摘要】功能
+  - 修改
+  - fix. 对后台进行了大量修改
+  - fix. 大量效率上的优化
+  - fix. 语言包修改
+  - fix. c_option.php 内容精简
+  - fix. 后台引用的 jQuery UI 升至 v1.11.1
+  - fix. 检测到没有 GD 时自动关闭验证码
+  - fix. 针对标题的引号等进行了入库时的转义
+  - fix. 进入后台不再刷新统计信息
+  - fix. c_html_js_add 加入 ETag 以缓存
+  - fix. 解决在某些情况下进入 404 但不退出程序的问题
+  - fix. 修正 ob_flush()之后仍然设置 header 的问题
+  - fix. 修复在某些情况下数据库关闭错误的问题
+  - fix. 修复评论名与现有用户名重复不提示问题
+  - fix. 解决一处反射型 XSS 安全漏洞
+  - fix. 修正数处拼写错误
+  - fix. #3：当类型为 double|float|data|time|datetime|timestamp 时建表语句组装错误的 BUG
+  - fix. #9：解决 safe mode 问题
+  - fix. #14：解决模板注释不起作用问题
+  - fix. #18：xml-rpc 仅发布标题
+  - 开发
+  - update. 增加 Config 类
+  - update. 数据库查询类增加 Group By 等操作
+  - update. 加入 posttype 自定义文章或页面类型
+  - update. $zbp 增加 LoadAppLanguage 方法用于读取应用的语言包
+  - update. $zbp 增加 HasConfig 方法用于判断配置是否存在
+  - update. $zbp→GetList 改名为 GetListType
+  - update. $zbp→GetMemberByName 读取时不区分大小写；
+  - update. #12：$Member 增加 IsGod 属性
+  - update. $Base 增加 toString 方法用于输出 JSON；
+  - update. $app 类禁止打包以.开头的隐藏文件夹
+  - update. $app 类导出时自动处理 BOM 头
+  - update. 数据类增加了 type 属性
+  - update. 对 DEBUG 机制进行了大量的调整
+  - update. Filter_Plugin_Debug_Shutdown_Handler 接口改为 Filter_Plugin_Debug_Handler
+  - update. 新增数个接口
+
+# 1.3 Wonce
+
+- 1.3
+  - 更新
+  - update. 数据库支持 mysqli 连接，完善了多个数据库组件；
+  - update. 模板在生成时会过滤掉 UTF-8 BOM；
+  - update. Member 类增加属性 StaticName 用于显示别名；
+  - update. 模块的内容在系统显示前会被替换部份变量和常量；
+  - update. 代码优化，加入文档注解，调整和了优化了系统的流程；
+  - update. 增加常量 ZBP_PATH；
+  - update. 新增 Network 类，调用方式与 XMLHttp 相同，同时支持 curl、fsockopen 和 file_get_contents；
+  - update. 插件接口系统进行了大修，增加相关函数，修改定义接口方式，对所有接口返回机制作了完善；
+  - update. SQL 查询增加了接口，改进了表前缀的替换方式，增加 meta_name 和 meta_namevalu 查询；
+  - update. 模块类增加属性 NoRefresh 属性以开关系统自动更新模块功能；
+  - update. 对 Debug 机制进行了大修，完善相关的容错处理；
+  - update. 验证码类增加设置，改进 ini_set 的判断，GZip 的修正。
+  - 修复
+  - fix. 修正了 rss.xml 输出；
+  - fix. 修正了 common.js 里的保存信息的 Bug；
+  - fix. 修正了 GetList 函数的 Bug；
+  - fix. 修正了在 Linux 下的大小写路径问题；
+  - fix. 修正了 $footer 替换的问题；
+  - fix. 修正了切换主题时出现的 Bug；
+  - fix. 修正了主题内置的文件式模块和数据库模块的显示与编辑功能。
+
+# 1.2 Hippo
+
+- 1.2
+  - 更新
+  - update. 主题模板解析支持函数，支持赋值等非输出方式
+  - update. 增加插件接口，对类和其它页面都进行了优化
+  - update. 增加繁体语言包（楊懿軒贡献）
+  - update. 增加 gzip 压缩
+  - update. 所有时间时区更新
+  - update. 增加 FloorID 楼层号
+  - update. 删除文件时检测是否存在此文件
+  - update. 增加 GetPost
+  - update. 支持数据库检查表存在和删除表
+  - update. 附带 UE 插件支持高亮模式，并已更新最新版本
+  - update. 增加了防外部提交的 token 校验
+  - update. 加入了关闭网站的设置
+  - update. 可以删除主题模块
+  - update. 调整 Debug 机制，对显示内容进行部份隐藏
+  - 修复
+  - fix. 部分情况下 ViewPost 不输出 http404 问题。
+  - fix. 侧栏作者列表与标签列表 a 表情未闭合问题。
+  - fix. 修正插件接口引用
+  - fix. url 规则中存在定量时伪静态错误情况
+  - fix. 部分主机应用中心无法下载问题
+  - fix. 伪静态 404 显示
+  - fix. 数据库操作多处 bug
+  - fix. 修正了 tags 重复生成的 BUG
+  - fix. 修正了吉光发现的用户编辑时的 BUG
