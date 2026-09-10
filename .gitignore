@@ -3,3 +3,5 @@ dist/
 .env
 .vitepress/cache/
 .vitepress/dist/
+.package-lock.json
+.vitepress
