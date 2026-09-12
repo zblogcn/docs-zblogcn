@@ -88,7 +88,7 @@ $password = GetVars("password", "COOKIE", "12345678");
 ```php
   $siteInfos = array(
     "url" => "https://docs.zblogcn.com/php/",
-    "git" => "https://github.com/zblogcn/docs-zblogphp",
+    "git" => "https://github.com/zblogcn/docs-zblogcn",
     "engine" => "docsify",
   );
   $siteUrl = GetValueInArray($siteInfos, "url", "");

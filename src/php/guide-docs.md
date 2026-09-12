@@ -106,7 +106,7 @@ pnpm run docs:build
 
 > 可视化工具可以使用「[TortoiseGit](https://tortoisegit.org/download/ "TortoiseGit")」或「[GitKraken](https://www.gitkraken.com/download "GitKraken")」；
 
-1、Fork 项目仓库到自己的账号下；「[zblogcn/docs-zblogphp: Z-BlogPHP Documentation](https://github.com/zblogcn/docs-zblogphp "zblogcn/docs-zblogphp: Z-BlogPHP Documentation")」
+1、Fork 项目仓库到自己的账号下；「[zblogcn/docs-zblogcn: Z-BlogPHP Documentation](https://github.com/zblogcn/docs-zblogcn "zblogcn/docs-zblogphp: Z-BlogPHP Documentation")」
 
 2、克隆自己的仓库到本地，并按如下命令操作；
 

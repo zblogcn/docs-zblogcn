@@ -14,11 +14,9 @@ Z-Blog 官方搭建的[`Z-Blog 应用中心`](https://app.zblogcn.com/) 是广�
 
 > 成为开发者 - Z-Blog 开发者入驻平台：
 >
-> [https://join.zdevo.com/](https://join.zdevo.com/ "成为开发者 - Z-Blog 开发者入驻平台")
+> 待完善
 >
 > \-----
->
-> Z-Blog 应用审议群：836912740 「[加群链接](https://jq.qq.com/?_wv=1027&k=qmkm7HSQ "Z-Blog 应用审核群")」
 
 审核通过后给予开发者权限，之后可上传应用到「应用中心（`https://app.zblogcn.com/`）」。
 
@@ -31,7 +29,6 @@ Z-Blog 官方搭建的[`Z-Blog 应用中心`](https://app.zblogcn.com/) 是广�
 
 > **Z-Blog 全新的应用中心，为众多开发者提供一个展示自己作品的平台。**
 
-**注：此贴文本复制于「[成为开发者 - 发布应用 - Z-BlogPHP 文档](/php/dev-publish#成为开发者 "成为开发者 - 发布应用 - Z-BlogPHP 文档")」，不要直接编辑；**
 
 ### 前置要求
 
@@ -56,7 +53,7 @@ Z-Blog 官方搭建的[`Z-Blog 应用中心`](https://app.zblogcn.com/) 是广�
     - 附带的文章地址及对应网站将作为额外的评估依据；<sup>②</sup>
     - 网站本身如为 Z-Blog，须保留带链接的 Powerd By 声明；其他程序请在首页添加指向`www.zblogcn.com`的友情链接
 4. 按审核意见逐条修改并上传至入驻平台，告一段落后汇总 Changelog 至发布者意见内；「**会写更新记录很重要**」
-5. 加 QQ 群，积极询问进度；**「群号： 836912740 」**
+5. 加 QQ 群，积极询问进度；**「群号： ---- 」**
 
 注：
 
@@ -66,12 +63,12 @@ Z-Blog 官方搭建的[`Z-Blog 应用中心`](https://app.zblogcn.com/) 是广�
 
 ### 审议 QQ 群
 
-群号：836912740
+群号：---
 
 ### 审核流程
 
 1. 在「开发者入驻平台」提交应用后，会有审核员进行审核，并及时反馈审核意见；
-2. 可以添加审议 QQ 群（群号：836912740）及时沟通。
+2. 可以添加审议 QQ 群（群号：---）及时沟通。
 
 ### 其他
 Z-BlogPHP 官方文档：https://docs.zblogcn.com/php/

@@ -2,7 +2,7 @@
 
 ## 环境要求
 
-PHP：`PHP 5.2 - 8.2`
+PHP：`PHP 7, 8.0-8.4`
 
 数据库：`MySQL（兼容 MariaDB）` `SQLite` `PostgreSQL`
 

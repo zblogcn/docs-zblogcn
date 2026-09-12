@@ -1,1 +1,1 @@
-`zblogcn/docs-zblogphp`: [https://github.com/zblogcn/docs-zblogphp](https://github.com/zblogcn/docs-zblogphp "Z-BlogPHP Documentation")
+`zblogcn/docs-zblogcn`: [https://github.com/zblogcn/docs-zblogcn](https://github.com/zblogcn/docs-zblogcn "Z-BlogPHP Documentation")
