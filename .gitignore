@@ -4,4 +4,4 @@ dist/
 .vitepress/cache/
 .vitepress/dist/
 .package-lock.json
-.vitepress
+.vitepress/search-index.json
