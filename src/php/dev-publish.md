@@ -6,9 +6,9 @@ Z-Blog 官方搭建的 [`Z-Blog 应用中心`](https://app.zblogcn.com/) 为广�
 
 ## 成为开发者
 
-请在 Z-Blog 开发者社区发帖申请，完成入驻操作。
+请在「[Z-Blog 开发者社区](https://bbs.zblogcn.com/)」发帖申请，完成入驻操作。
 
-审核通过后给予开发者权限，之后可上传应用到「应用中心（`https://app.zblogcn.com/`）」。
+审核通过后给予开发者权限，之后可上传应用到「[应用中心](https://app.zblogcn.com/)」。
 
 **注：后续应用实行上传后审核发布。**
 
@@ -45,10 +45,6 @@ Z-Blog 官方搭建的 [`Z-Blog 应用中心`](https://app.zblogcn.com/) 为广�
 ### 审核流程
 
 1. 在 Z-Blog 开发者社区提交应用后，会有审核员进行审核，并及时反馈审核意见，如有疑问可在 QQ 群沟通。
-
-### 其他
-
-Z-BlogPHP 官方文档：<https://docs.zblogcn.com/php/>
 
 </details>
 
