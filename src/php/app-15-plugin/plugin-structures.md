@@ -21,5 +21,12 @@
 ├─script          [可选]JS 脚本目录，前后台尽量分开；
 └─other           [可选]其他任意自定义文件夹及内容
 ```
+**推荐**：独立 PHP 文件（含 `function.php`、class 目录下的文件）应在文件开头加入防直接访问保护，防止被直接访问：
+
+```php
+if (!defined('ZBP_PATH')) {exit();}
+```
+
+> 防止浏览器直接访问该文件时执行内部代码、暴露报错信息。经由系统正常流程加载的文件不受影响（`ZBP_PATH` 已定义）。
 
 <!-- docs\books\include\plugin-structures.md -->
