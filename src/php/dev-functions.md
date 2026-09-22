@@ -218,9 +218,6 @@ GetPHPVersion()
 #### 检查移动端
 `zbp_is_mobile`()
 
-#### 检查移动端
-`CheckIsMobile`()
-
 #### 通过 URL 获取远程页面内容
 `GetHttpContent`($url)
 
