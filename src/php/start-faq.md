@@ -4,15 +4,24 @@
 
 Z-BlogPHP 密码找回工具：
 
-[https://bbs.zblogcn.com/thread-83419.html](https://bbs.zblogcn.com/thread-83419.html "Z-BlogPHP密码找回工具-程序发布-ZBlogger技术交流中心")
+下载地址：[https://update.zblogcn.com/tools/nologin.zip](https://update.zblogcn.com/tools/nologin.zip "Z-BlogPHP密码找回工具-程序发布-ZBlogger技术交流中心")
 
-**注：nologin.php 非常的危险，使用后请立即删除。**
+使用方法：在本地解压后，通过 FTP 将 `nologin.php` 上传到 Z-BlogPHP 根目录，在浏览器中打开该文件，选择管理员登录或将密码重置为 `12345678`；操作执行后工具会自动删除自身。
 
-**注 2：nologin.php 非常的危险，使用后请立即删除。**
+> **安全提醒：** 自删仅在点击「登录」或「重置密码」后触发，只打开页面不会删除；若因文件权限导致自删失败，请立即通过 FTP 手动删除。重置后请尽快登录后台修改密码。
 
-**注 3：nologin.php 非常的危险，使用后请立即删除。**
+有终端权限的空间，也可直接用命令下载并改成随机文件名，避免文件名被扫描器猜中：
 
-「- -」「- -」「- -」「- -」「- -」
+```bash
+# 下载
+wget https://update.zblogcn.com/tools/nologin.zip
+
+# 提取并直接改名为随机文件名（一步完成）
+unzip -p nologin.zip nologin.php > "nologin-$(date +%m%d%H%M).php"
+
+# 查看文件名，在浏览器中访问该文件即可
+ls -1 nologin-*.php
+```
 
 
 ## 升级 1.7.3.3260 之后出现后台登录错误
