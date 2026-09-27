@@ -149,18 +149,15 @@ export default defineConfig({
         'Copyright © 2026 Z-Blog · <a href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">豫ICP备2026041506号-1</a>'
     }
   },
-  // 将 VitePress 作为 MCP Server 提供文档检索能力（见 /php/guide-mcp）
-  // vitepress-plugin-llms 构建时生成 llms.txt / llms-full.txt 及每页 .md
   vite: {
     plugins: [
       MCPPlugin({ port: 4000 }),
       llmstxt({
         domain: 'https://docs.zblogcn.com',
-        ignoreFiles: ['php/app-*/**/*.md'],
-        // 将 /php/ 与 /asp/ 两组侧边栏包一层产品名分组，避免同名章节混排
+        ignoreFiles: ['php/app-*/**/*.md', '**/terms/*.md', 'php/api-mods/**/*.md', 'php/api-common-template.md'],
         sidebar: (configSidebar) => [
-          { text: 'Z-BlogPHP', items: configSidebar?.['/php/'] ?? [] },
-          { text: 'Z-BlogASP', items: configSidebar?.['/asp/'] ?? [] }
+          { text: 'Z-BlogPHP', link: '/php/', items: configSidebar?.['/php/'] ?? [] },
+          { text: 'Z-BlogASP', link: '/asp/', items: configSidebar?.['/asp/'] ?? [] }
         ]
       })
     ]
