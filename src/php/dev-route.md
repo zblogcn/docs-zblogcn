@@ -1,3 +1,8 @@
+---
+title: Z-BlogPHP 页面路由
+description: 介绍 Z-BlogPHP 的页面路由机制，包含 1.7 新版路由系统的规则配置与使用示例，以及旧版路由的兼容写法。
+---
+
 # 页面路由
 
 本节部分示例代码基于「[Hello Z-Blog - 插件开发](/php/dev-plugin#hello-z-blog "Hello Z-Blog - 插件开发")」创建的`demoPlugin`插件；
@@ -217,7 +222,7 @@ $route = array(
   'name' => 'plugin_redierct_to_baidu',
   'urlrule' => '{%host%}baidu.html',
   // redirect_to是http302跳转,如果需要301跳转，键名要写为redirect301_to
-  'redirect_to' => 'https://www.baidu.com/', 
+  'redirect_to' => 'https://www.baidu.com/',
 );
 
 $zbp->RegRoute($route, true);//这里需要加上第2个参数ture表示追加路由到最前
@@ -293,7 +298,7 @@ $zbp->RegRoute(
         'name' => 'rewrite_api',
         'call' => 'Rewrite_API',
         'urlrule' => '{%host%}api/{%mod%}/{%act%}/',
-        'args' => 
+        'args' =>
         array (
           'mod' => '[_a-zA-Z0-9]+',
           'act' => '[_a-zA-Z0-9]+',
@@ -395,7 +400,7 @@ function demoPlugin_Rewrite($original_url, $url)
     ViewPost($m);
 
     // 用于跳过同一接口队列中的后续操作
-    $GLOBALS['hooks']['Filter_Plugin_ViewAuto_Begin']['demoPlugin_Rewrite'] = 
+    $GLOBALS['hooks']['Filter_Plugin_ViewAuto_Begin']['demoPlugin_Rewrite'] =
     PLUGIN_EXITSIGNAL_RETURN;
   }
 }

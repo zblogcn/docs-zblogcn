@@ -1,3 +1,8 @@
+---
+title: MCP 检索服务
+description: 介绍 Z-Blog 官方文档接入的 MCP 检索服务，说明其工作原理、支持 MCP 的 AI 客户端接入方法及使用限制。
+---
+
 # MCP 检索服务
 
 ## 简介

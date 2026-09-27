@@ -1,3 +1,8 @@
+---
+title: Z-BlogPHP 网络组件
+description: 介绍 Z-BlogPHP 自带的 NetWork 网络组件，包括 curl、filegetcontents、fsockopen 三种实现方式的创建顺序与常用方法。
+---
+
 # NetWork 网络组件
 
 ## 组件简介

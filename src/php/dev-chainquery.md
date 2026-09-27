@@ -1,3 +1,8 @@
+---
+title: Z-BlogPHP 链式 SQL 操作
+description: 介绍 Z-BlogPHP 1.7 版本新增的链式 SQL 查询语法，通过 select、where 等方法链式生成并执行 SQL 语句。
+---
+
 # 链式 SQL 操作
 
 **此页面内容仅适用于「1.7 及更高版本」！**

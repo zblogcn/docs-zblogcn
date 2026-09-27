@@ -1,3 +1,8 @@
+---
+title: Z-BlogPHP API 通用模板
+description: Z-BlogPHP API 的通用请求模板，说明请求地址、通用请求头与响应格式，供对接各模块接口时参考。
+---
+
 # API 通用模板
 <!-- 感觉不太需要？？？ -->
 

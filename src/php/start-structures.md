@@ -1,3 +1,8 @@
+---
+title: Z-BlogPHP 文件结构
+description: 列出 Z-BlogPHP 程序的目录与文件结构，说明 zb_system、zb_users、zb_install 等核心目录及子目录的用途。
+---
+
 # 文件结构
 
 ```plain

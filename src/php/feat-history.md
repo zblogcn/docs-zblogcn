@@ -1,3 +1,8 @@
+---
+title: Z-BlogPHP 版本历史
+description: Z-BlogPHP 各版本的功能更新记录，包含 1.7 Tenet 及历史版本的新特性、修正与接口变更说明。
+---
+
 # 版本历史
 
 > 当前正式版本号为 `1.7.4`；
@@ -35,7 +40,7 @@
   - fix. 加强外链跳转的安全措施。
   - fix. 在发表评论时添加对post ID存在的检查。
   - fix. 修正GetGuestIP逻辑，默认读取remote_addr。
-    
+
 - 1.7.3
   - feat. 添加API
   - feat. 支持PHP 8.2

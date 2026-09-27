@@ -42,12 +42,6 @@ description: 介绍 Z-BlogPHP 的下载渠道、环境要求与安装步骤，�
 | `title`       | 推荐显式填写，并与正文 H1 保持一致；标题应准确、简洁                                                                |
 | `description` | 推荐填写，用一至两句概括主题与适用场景，自然包含程序名称（Z-BlogPHP / Z-BlogASP）；会输出为页面的 meta description，供搜索引擎与 AI 工具引用 |
 
-**注：**
-
-1. `description` 不使用几个字的标签，也不为固定字数填充内容；
-2. `keywords`、`tags` 等字段 VitePress 原生不会输出到页面，如需生效须在 `.vitepress/config.mts` 中另行配置；
-3. frontmatter 仅辅助检索与引用，正文的准确性、完整性与可验证性同样重要，不为凑关键词牺牲正文质量。
-
 ### 图片与代码
 
 配图存放在 `src/public/img/` 的对应目录下，Markdown 中使用以 `/img/` 开头的站内路径：

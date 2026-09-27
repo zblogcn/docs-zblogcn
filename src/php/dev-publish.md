@@ -1,3 +1,8 @@
+---
+title: Z-BlogPHP 发布应用
+description: 介绍如何成为 Z-Blog 开发者，将主题或插件发布到 Z-Blog 应用中心的流程、审核要求与上架标准。
+---
+
 # 发布应用
 
 Z-Blog 官方搭建的 [`Z-Blog 应用中心`](https://app.zblogcn.com/) 为广大 Z-Blog 使用者和开发者提供了主题和插件的大本营，提供免费与收费的 Z-Blog 主题、模板和插件的下载。

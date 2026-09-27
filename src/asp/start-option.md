@@ -1,3 +1,8 @@
+---
+title: Z-BlogASP 配置管理
+description: 介绍 Z-BlogASP 配置文件 c_option.asp 的位置与作用、后台登录入口及数据库连接信息的修改注意事项。
+---
+
 # 配置管理
 
 ## 配置文件

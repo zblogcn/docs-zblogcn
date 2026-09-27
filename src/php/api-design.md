@@ -1,3 +1,8 @@
+---
+title: Z-BlogPHP API 基本设计
+description: 介绍 Z-BlogPHP API 的整体设计，包括按功能模块划分的九个模块、通用返回格式与权限认证机制。
+---
+
 # API 整体设计
 
 ## 概要
@@ -292,7 +297,7 @@ var_dump(ApiExecute('post', 'get', array('id' => '1')));
 
 ### 增加/删除 Private API
 
-> **说明**  
+> **说明**
 > 在 API 系统中，Private API 为只能被自身调用，即只能通过 `ApiExecute` 方法调用的 API.
 
 ```php

@@ -1,3 +1,8 @@
+---
+title: Z-BlogPHP 接口文档
+description: Z-BlogPHP API 接口文档，说明 api.php 的请求地址模式、参数字段约定、鉴权要求及各功能模块的行为。
+---
+
 # 接口文档
 
 API 地址模式：`https://example.com/zb_system/api.php?mod=<模块名>[&act=<行为名>][&其他...]`

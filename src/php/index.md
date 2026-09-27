@@ -1,3 +1,8 @@
+---
+title: Z-BlogPHP
+description: Z-BlogPHP 是基于 PHP 平台的博客程序与建站系统文档首页，提供安装配置、主题插件开发、API 接口与参与协作的完整导航。
+---
+
 # Z-BlogPHP
 
 Z-BlogPHP 是基于 PHP 平台的博客程序与建站系统，支持 MySQL、SQLite 和 PostgreSQL 数据库。

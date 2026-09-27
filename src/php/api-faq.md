@@ -1,3 +1,8 @@
+---
+title: Z-BlogPHP 常见问题（API）
+description: 汇总 Z-BlogPHP API 使用中的常见问题，包括自定义 JSON 返回格式等接口输出的调整方法。
+---
+
 # 常见问题（API）
 
 ## 输出自定义的 JSON 格式 (1.7.2 支持)

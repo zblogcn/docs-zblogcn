@@ -1,3 +1,8 @@
+---
+title: Z-BlogASP
+description: Z-BlogASP 是基于 ASP 平台的博客程序文档首页，支持 Access 与 MSSQL 数据库，提供安装配置与应用开发文档导航。
+---
+
 # Z-BlogASP
 
 Z-BlogASP是一款基于ASP平台的博客程序，支持Access、MSSQL数据库。

@@ -1,3 +1,8 @@
+---
+title: Z-BlogPHP 函数列表
+description: 介绍 Z-BlogPHP 封装的常用辅助函数，如 GetList 获取文章列表等，函数定义位于 zb_system/function/c_system_common.php。
+---
+
 # 函数列表
 
 Z-BlogPHP 封装了众多辅助函数，文件路径为：「[zb_system/function/c_system_common.php](https://github1s.com/zblogcn/zblogphp/blob/master/zb_system/function/c_system_common.php "zb_system/function/c_system_common.php - GitHub1s") 」←此链接可直接在线查看；

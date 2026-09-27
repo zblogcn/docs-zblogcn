@@ -1,3 +1,8 @@
+---
+title: Z-BlogPHP 自定义数据类型及数据库建表和 CURD 操作
+description: 介绍 Z-BlogPHP 中如何自定义数据类型，包括通过 $table 与 $datainfo 定义数据结构、数据库建表及增删改查（CURD）操作。
+---
+
 # 自定义数据类型及数据库建表和 CURD 操作
 
 

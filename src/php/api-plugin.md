@@ -1,3 +1,8 @@
+---
+title: Z-BlogPHP API 调试工具
+description: 提供 Z-BlogPHP API 调试工具，包括 Postman 接口包的导入方法与变量配置，便于开发过程中测试 API 接口。
+---
+
 # 调试插件
 
 为了方便开发过程测试调试 API，提供部分软件 API 调试接口包

@@ -1,3 +1,8 @@
+---
+title: Z-BlogPHP 配置管理
+description: 介绍 Z-BlogPHP 配置文件 c_option.php 的位置与作用、后台登录入口、Composer 包加载方式，以及通过环境变量或预设配置完成安装的方法。
+---
+
 # 配置管理
 
 ## 配置文件
