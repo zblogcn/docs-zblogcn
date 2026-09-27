@@ -92,6 +92,64 @@
 
 →①：[模板内使用 PHP](#%e6%a8%a1%e6%9d%bf%e5%86%85%e4%bd%bf%e7%94%a8-php "模板内使用 PHP")；
 
+### 文章图片与缩略图
+
+系统内置了缩略图基类，可通过以下模板标签获取文章图片：
+
+**获取文章第一张原图**
+
+```php
+{$article.AllImages[0]}
+```
+
+返回文章中第一张图片的 URL。
+
+**获取文章图片总数**
+
+```php
+{$article.ImageCount}
+```
+
+返回 `$article.AllImages` 数组的计数。
+
+**获取文章缩略图**
+
+```php
+{$article.Thumbs(640, 360, 1, false)[0]}
+```
+
+参数说明：
+- `640` — 缩略图宽度（像素）
+- `360` — 缩略图高度（像素）
+- `1` — 裁剪模式（0=按比例缩放，1=裁剪填充）
+- `false` — 是否强制重新生成（true=强制重新生成，false=使用缓存）
+- `[0]` — 取第一张图片的缩略图
+
+**PHP 代码调用方式**
+
+```php
+{php}
+// 获取文章所有图片
+$images = $article->AllImages;
+
+// 生成缩略图（宽度 640，高度 360，裁剪模式，使用缓存）
+$thumbs = $article->Thumbs(640, 360, 1, false);
+$thumbUrl = $thumbs[0]; // 第一张图的缩略图地址
+{/php}
+```
+
+**注意事项**
+
+1. 缩略图功能需要 GD 库支持；
+2. 1.7.4 版本起支持 `webp` 和 `avif` 格式，可提高图片加载速度；
+3. 如果文章没有图片，`$article.AllImages` 返回空数组，使用前建议判断：
+
+```php
+{if $article.ImageCount > 0}
+  <img src="{$article.Thumbs(640, 360, 1, false)[0]}" alt="{$article.Title}">
+{/if}
+```
+
 ### 模板内使用 PHP
 
 在相应内容输出前，可以使用如下语法额外对数据进行处理；
