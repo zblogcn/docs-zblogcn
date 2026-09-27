@@ -155,8 +155,13 @@ export default defineConfig({
     plugins: [
       MCPPlugin({ port: 4000 }),
       llmstxt({
-        hostname: 'https://docs.zblogcn.com',
-        ignoreFiles: ['php/app-*/**/*.md']
+        domain: 'https://docs.zblogcn.com',
+        ignoreFiles: ['php/app-*/**/*.md'],
+        // 将 /php/ 与 /asp/ 两组侧边栏包一层产品名分组，避免同名章节混排
+        sidebar: (configSidebar) => [
+          { text: 'Z-BlogPHP', items: configSidebar?.['/php/'] ?? [] },
+          { text: 'Z-BlogASP', items: configSidebar?.['/asp/'] ?? [] }
+        ]
       })
     ]
   }
