@@ -105,18 +105,10 @@ pnpm run docs:build
 
 ### AI 文档导出
 
-本仓库使用 `vitepress-plugin-llms` 插件，在构建时自动生成 AI 友好的文档索引：
+按 llms.txt 提案组织 AI 文档：主索引提供背景和导航，分类索引供按需检索，单篇 Markdown 对应实际网页地址。每次 `pnpm run docs:build` 时自动生成以下 AI 友好文件，无需手工维护：
 
 | 输出 | 用途 |
 | --- | --- |
 | `dist/llms.txt` | 文档目录索引，包含站点介绍、分类导航及每篇文档的标题和链接 |
 | `dist/llms-full.txt` | 全文聚合文件，汇总所有 Markdown 文档的完整内容，供 AI 工具一次性读取 |
 | `dist/**/*.md` | 单篇 Markdown，与在线页面一一对应，附带网页原文链接 |
-
-每次 `pnpm run docs:build` 时，插件会扫描 `src/` 下的 Markdown 文件并自动生成上述文件。`llms.txt` 和 `llms-full.txt` 会随静态站点发布到线上，外部 AI 客户端可直接抓取 `https://docs.zblogcn.com/llms-full.txt` 获取完整文档内容。
-
-**注意：**
-
-1. 内容分片目录（`php/app-*/`）的文件已配置排除，不会出现在导出结果中，避免重复内容被 AI 索引；
-2. 新增文档或修改标题后，需重新构建才能更新导出的索引；
-3. 模板标签（如 `{$article.Title}`）在 Markdown 中需放在行内代码或代码块内，避免被插件误解析。
