@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 import { MCPPlugin } from 'vitepress-plugin-mcp'
+import llmstxt from 'vitepress-plugin-llms'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -149,7 +150,14 @@ export default defineConfig({
     }
   },
   // 将 VitePress 作为 MCP Server 提供文档检索能力（见 /php/guide-mcp）
+  // vitepress-plugin-llms 构建时生成 llms.txt / llms-full.txt 及每页 .md
   vite: {
-    plugins: [MCPPlugin({ port: 4000 })]
+    plugins: [
+      MCPPlugin({ port: 4000 }),
+      llmstxt({
+        hostname: 'https://docs.zblogcn.com',
+        ignoreFiles: ['php/app-*/**/*.md']
+      })
+    ]
   }
 })
