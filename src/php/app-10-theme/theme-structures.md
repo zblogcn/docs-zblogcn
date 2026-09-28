@@ -9,7 +9,6 @@
 │  main.php       [可选]应用内置管理页，在创建主题时填写才会生成；
 │  include.php    [可选]应用嵌入页，在创建主题时填写才会生成；
 │
-├─compile         [废弃]旧版 z-blog 用于放置模板编译文件，可直接删除；
 ├─include         [可选]主题自带「文件模块」，使用{module:abc}「嵌入调用」该目录下的abc.php文件；
 ├─script          [可选]JS目录；
 ├─style           [必需]样式目录, 内存样式表及所需图片；
@@ -23,6 +22,7 @@
        header.php 公共头部文件
        footer.php 公共尾部文件
        404.php    建议设置
+└─template.json   [可选]模板文件描述信息；
 ```
 
 ## 主入口模板
@@ -51,15 +51,15 @@
   {template:hero}
   <!-- ↓Your Code↓ -->
   <!-- ↓Your Code↓ -->
-  <div id="divNavBar">
+  <nav id="divNavBar">
     <!-- 导航「模块」调用 -->
     <ul>{module:navbar}</ul>
-  </div>
-  <div id="divMiddle">
+  </nav>
+  <main id="divMiddle">
     <div id="divMain">列表索引或正文内容</div>
     <!-- 「侧栏」调用 -->
     <div id="divSidebar">{template:sidebar}</div>
-  </div>
+  </main>
   <!-- ↑Your Code↑ -->
   <!-- ↑Your Code↑ -->
   {template:footer}<!-- 公共尾部文件 -->
