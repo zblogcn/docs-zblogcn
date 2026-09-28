@@ -1,4 +1,12 @@
-## 5分钟快速入门
+## 本地环境搭建
+将下载后的程序代码解压到你的网站根目录，如`/home/wwwroot/example.com/`，运行你的网站，会自动跳转到安装页面：`http://example.com/zb_install/index.php`。
+
+在安装页面输入您的数据库信息、博客名称、用户名、密码等信息后程序将会自动安装。
+
+本地环境 mysql 默认账户密码均是 root ，数据库名为字母或字母加数字
+- [视频教程](https://www.bilibili.com/video/BV1wyZnY2EYq/?share_source=copy_web&vd_source=8a82759c2c3c36bf8a6dcde3d4b74658)
+
+## 5 分钟快速入门
 
 #### 1.开启开发者模式
 
@@ -14,7 +22,7 @@
 
 | 必要字段   | 说明         |
 | ---------- | ------------ |
-| 应用ID | 为了防止与其他应用id冲突，采用 缩写_字母 的形式，如：my_themename |
+| 应用 ID | 为了防止与其他应用 id 冲突，采用 缩写_字母 的形式，如：my_themename |
 | 应用名称 | 在主题管理页面显示 |
 | 发布页面 | 点击应用名称的时候会跳转到发布页面 |
 | 应用简介 | 主题的简要说明，不在主题管理页面显示 |
@@ -32,12 +40,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>{$name}-{$title}</title>
+    <link rel="stylesheet" rev="stylesheet" href="{$host}zb_users/theme/{$theme}/style/{$style}.css" type="text/css" media="all"/>
+	<script src="{$host}zb_system/script/jquery-latest.min.js?v={$version}"></script>
+	<script src="{$host}zb_system/script/zblogphp.js?v={$version}"></script>
+	<script src="{$host}zb_system/script/c_html_js_add.php?hash={$html_js_hash}&v={$version}"></script>
+{$header}
 </head>
 <body>
     {foreach $articles as $article}
     <a href="{$article.Url}">{$article.Title}</a>
     {/foreach}
+{$footer}
 </body>
 </html>
 ```
@@ -48,11 +62,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>{$name}-{$title}</title>
+    <link rel="stylesheet" rev="stylesheet" href="{$host}zb_users/theme/{$theme}/style/{$style}.css" type="text/css" media="all"/>
+	<script src="{$host}zb_system/script/jquery-latest.min.js?v={$version}"></script>
+	<script src="{$host}zb_system/script/zblogphp.js?v={$version}"></script>
+	<script src="{$host}zb_system/script/c_html_js_add.php?hash={$html_js_hash}&v={$version}"></script>
+{$header}
 </head>
 <body>
     <h2>{$article.Title}</h2>
 	<div>{$article.Content}</div>
+{$footer}
 </body>
 </html>
 ```
@@ -63,8 +83,10 @@
 
 此时，我们进入网站首页就可以看到我们写的主题了,至此我们的快速入门就讲完了。
 
-## template模板布局
-一个网站很多页面都有相同的部分，比如公共的css和js 文件，导航，底部，如何把这些公共部分有效的组织起来呢。
+- [视频教程](https://www.bilibili.com/video/BV1xpRUY9EKB/)
+
+## template 模板布局
+一个网站很多页面都有相同的部分，比如公共的 css 和 js 文件，导航，底部，如何把这些公共部分有效的组织起来呢。
 #### 拆分首页
 ```html
 <!DOCTYPE html>
@@ -107,23 +129,25 @@
 #### 制作导航文件
 在`zb_users\theme\主题ID\template`目录下添加`c_nav.php`,内容如下：
 ```html
-<div id="divTop">
+<header id="divTop">
     <h1 id="BlogTitle"><a href="{$host}">{$name}</a></h1>
     <h2 id="BlogSubTitle">{$subname}</h2>
-</div>
-<div id="divNavBar">
+</header>
+<nav id="divNavBar">
     <ul>
         {module:navbar}
     </ul>
-</div>
+</nav>
 ```
 - 制作公共底部文件
 在`zb_users\theme\主题ID\template`目录下添加`footer.php`,内容如下：
 ```html
-<!--版权说明-->
-{$copyright}
-<!--激活插件-->
-{$footer}
+<footer>
+    <!--版权说明-->
+    {$copyright}
+    <!--激活插件-->
+    {$footer}
+</footer>
 ```
 #### 拼装首页
 在这一步我们就使用`template`标签来加载公共文件，更改后台首页模板内容如下：
@@ -138,17 +162,20 @@
 <body>
 <!--加载导航文件-->
 {template:c_nav}
-<div class="container">
+<main class="container">
     <!--主要内容-->
-</div>
+</main>
 {template:footer}
 <!--本页面自定义的js-->
 </body>
 </html>
 ```
 
-## 列表页
-首页、分类页、用户页、日期页和标签页都是用的index.php模板页面，如想个性化设置每个页面的模板，可以这样判断
+- [视频教程](https://www.bilibili.com/video/BV1Y1duYbEBm/)
+
+## 页面判断
+#### 列表页
+首页、分类页、用户页、日期页和标签页都是用的 index.php 模板页面，如想个性化设置每个页面的模板，可以这样判断
 ```html
 {if $type=='index'&&$page=='1'}
 <!--/*判断首页*/-->
@@ -170,15 +197,67 @@
 {template:c_list}
 {/if}
 ```
-然后新建相应的模板文件，c_list这里的命名随意，只要和模板文件名一致即可。文档这样起名是为了方便管理。
+然后新建相应的模板文件，c_list 这里的命名随意，只要和模板文件名一致即可。文档这样起名是为了方便管理。
+
+- [视频教程](https://www.bilibili.com/video/BV1nrdfYLEc9/)
+
+#### 内页
+```html
+{if $article.Type==ZC_POST_TYPE_ARTICLE}
+<!--/*判断文章内页*/-->
+{template:post-single}
+{else}
+<!--/*判断单页*/-->
+{template:post-page}
+{/if}
+```
+
+#### 页面说明（template.json）
+对主题模板文件添加描述信息
+在网站 `\zb_users\theme\主题ID\` 文件夹下创建 template.json
+```json
+  {
+      "id": "主题ID",
+      "templates": [
+          {
+              "filename": "index",
+              "type": "list",
+              "name": "列表自动模板"
+          },
+          {
+              "filename": "single",
+              "type": "single",
+              "name": "文章/单页自动模板"
+          }
+      ]
+  }
+```
+
+type 类型
+```json
+- index           首页
+- list            列表页
+  - author        作者页
+  - category      分类页
+  - date          时间页
+  - tag           标签页
+- single          单页面（含文章与页面）
+  - article       文章页
+  - page          单页页面页
+- search          搜索
+- 404             404
+```
+
+- [视频教程](https://www.bilibili.com/video/BV1sy5fztEJa/)
+
 
 ## 导航标签制作
 
 导航标签用于生成前台导航,标签`{module:navbar}`
-zblog的导航默认只支持到二级导航，自定义样式可参考以下步骤。
+zblog 的导航默认只支持到二级导航，自定义样式可参考以下步骤。
 - 1.开启《链接模块管理》插件
-- 2.找到当前主题的模板目录，进入template文件夹
-- 3.在template文件夹下创建`lm-module-navbar.php`文件，文件内容如下:
+- 2.找到当前主题的模板目录，进入 template 文件夹
+- 3. 在 template 文件夹下创建`lm-module-navbar.php`文件，文件内容如下:
 ```html
 <li class="{if count($item.subs)}dropdown{/if}">{if count($item.subs)}<i class="arr"></i>{/if}
     <a href="{$item.href}" target="_self" target="{$item.target}" title="{$item.title}">{$item.text}</a>
@@ -197,7 +276,9 @@ zblog的导航默认只支持到二级导航，自定义样式可参考以下步
 ```
 - 5.这个时候就可以在后台-》模块管理-》导航栏，编辑里面配置导航了。
 
-## 文章列表制作
+- [视频教程](https://www.bilibili.com/video/BV1hyoVYzELk/)
+
+## 自定义区域调用文章列表
 ```html
 array(
   'count' => 10, //（可省略）
@@ -218,6 +299,18 @@ array(
   'where_custom' => array(array('=', 'log_Template', '')), //自定义 where
   'order_custom' => array('log_ViewNums' => 'DESC', 'log_CommNums' => 'ASC'), //自定义 order
 )
+```
+#### 调用某个分类下的文章
+```html
+{php}
+$w=array();
+$w['count']=9;   //显示9篇文章
+$w['cate']=1;    //分类ID
+$array=GetList($w);
+{/php}
+{foreach $array as $key=>$related}
+<li><a href="{$related.Url}"><i>{$key+1}</i> {$related.Title} </a></li>
+{/foreach}
 ```
 #### 调用同分类文章
 ```html
@@ -261,7 +354,31 @@ $w['count']=10;    //显示数量
 $w['where_custom']=array();
 $w['where_custom'][]=array('<>', 'log_CateID', '1');
 $result = GetList($w);
-foreach ($result as $related) {
-    echo '<a href="'.$related->Url.'">'.$related->Title.'</a>';
+{foreach $array as $key=>$related}
+{$key+1}-{$related.Time()}--<a href="{$related.Url}" title="{$related.Title}">{$related.Title}</a></li>
+{/foreach}
+```
+## 分类列表
+#### 调用全部分类
+```html
+{foreach $categoriesbyorder as $categorynav}
+<li><a href='{$categorynav.Url}'>{$categorynav.Name}</a></li>
+{/foreach}
+```
+#### 调用当前子分类的同级分类
+```html
+{php}
+$cid=0;
+if($type=='category'){
+  $cid=$category->RootID?$category->RootID:$category->ID;
+}elseif($type=='article'){
+  $cid=$article->Category->RootID?$article->Category->RootID:$article->Category->ID;
 }
+{/php}
+{if $cid}
+{$zbp->GetCategoryByID($cid)->Name}
+{foreach $categorys[$cid].SubCategorys as $categorynav}
+<li><a href='{$categorynav.Url}'>{$categorynav.Name}</a></li>
+{/foreach}
+{/if}
 ```
