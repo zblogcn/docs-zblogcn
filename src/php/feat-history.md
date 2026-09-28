@@ -5,6 +5,8 @@ description: Z-BlogPHP 各版本的功能更新记录，包含 1.7 Tenet 及历�
 
 # 版本历史
 
+本篇记录 Z-BlogPHP 各版本的功能更新，历史版本的新特性、修正与接口变更。
+
 > 当前正式版本号为 `1.7.4`；
 >
 > 相关：[Z-Blog 开发大事记](https://www.zblogcn.com/about/ "Z-Blog开发大事记")

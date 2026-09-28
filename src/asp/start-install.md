@@ -5,6 +5,8 @@ description: 介绍 Z-BlogASP 的环境要求（IIS、Access/MSSQL）、下载�
 
 # 下载安装
 
+本篇介绍 Z-BlogASP 的运行环境要求、下载地址与安装部署步骤。
+
 ## 环境要求
 
 IIS：建议7.0+

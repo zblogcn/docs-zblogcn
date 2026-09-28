@@ -5,6 +5,8 @@ description: 介绍 Z-Blog 官方文档接入的 MCP 检索服务，说明其工
 
 # MCP 检索服务
 
+本文档站点已接入 `vitepress-plugin-mcp`，将 VitePress 文档以 MCP Server 的形式对外提供检索能力。本篇介绍其工作原理、支持 MCP 的 AI 客户端接入方法及使用限制。
+
 ## 简介
 
 本文档站点已接入 `vitepress-plugin-mcp`，将 VitePress 文档以「[MCP Server](https://modelcontextprotocol.io/ "Model Context Protocol")」的形式对外提供检索能力。

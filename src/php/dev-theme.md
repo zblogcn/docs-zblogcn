@@ -5,6 +5,8 @@ description: 介绍 Z-BlogPHP 主题的文件结构、模板文件与保留模�
 
 # 主题开发
 
+Z-BlogPHP 主题控制网站的前台展示。本篇介绍主题的文件结构、模板文件、模板语法标签及编译机制，以及缩略图等模板功能的调用方法。
+
 <!-- 文件结构 -->
 <!-- @include: ./app-10-theme/theme-structures.md -->
 

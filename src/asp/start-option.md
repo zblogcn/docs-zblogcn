@@ -5,6 +5,8 @@ description: 介绍 Z-BlogASP 配置文件 c_option.asp 的位置与作用、后
 
 # 配置管理
 
+Z-BlogASP 安装后会生成配置文件 `c_option.asp`，记录数据库连接等基础信息。本篇介绍配置文件的位置与作用及修改注意事项。
+
 ## 配置文件
 
 正确安装Z-BlogASP后会以如路径`path/zb_users/c_option.asp`生成一份配置文件，写有包括「数据库信息」在内的所有「系统配置」

@@ -5,6 +5,8 @@ description: 列出 Z-BlogPHP 程序的目录与文件结构，说明 zb_system�
 
 # 文件结构
 
+本篇列出 Z-BlogPHP 程序的目录与文件结构，说明 zb_system、zb_users、zb_install 等核心目录及子目录的用途。
+
 ```plain
 Z-BlogPHP
 │  index.php      首页

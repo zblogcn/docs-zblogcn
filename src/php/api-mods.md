@@ -5,6 +5,8 @@ description: Z-BlogPHP API 接口文档，说明 api.php 的请求地址模式�
 
 # 接口文档
 
+本篇为 Z-BlogPHP API 各模块的接口文档，说明请求地址模式、参数字段约定、鉴权要求及各功能模块的行为。
+
 API 地址模式：`https://example.com/zb_system/api.php?mod=<模块名>[&act=<行为名>][&其他...]`
 
 - 对于各「API 模块」的`act=post`请求，其请求参数为`$GLOBALS['datainfo']`中与该模块对应的数据字段定义；

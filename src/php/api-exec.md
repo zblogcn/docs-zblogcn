@@ -5,6 +5,8 @@ description: 介绍 Z-BlogPHP 1.7.3 新增的 ApiExecute 函数，可在程序�
 
 # 本地调用 API
 
+Z-BlogPHP 可以在程序内部直接调用公共模块和私有模块的 API 并获取返回结果，无需通过 HTTP 请求。本篇介绍其用法。
+
 ## 本地调用 API  (1.7.3 支持)
 
 1.7.3 新增了 `ApiExecute` 函数，可以调用执行 `公共模块` 和 `私有模块` 的 API 并返回结果

@@ -5,6 +5,8 @@ description: 汇总 Z-BlogPHP API 使用中的常见问题，包括自定义 JSO
 
 # 常见问题（API）
 
+本篇汇总 Z-BlogPHP API 使用中的常见问题与处理方法。
+
 ## 输出自定义的 JSON 格式 (1.7.2 支持)
 
 系统 API 默认输出 code,data,error,message 字段的 JSON 内容

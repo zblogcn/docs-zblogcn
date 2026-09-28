@@ -5,6 +5,8 @@ description: 介绍如何通过 Z-BlogPHP 插件扩展自定义 API，以 newapi
 
 # 自定义 API
 
+通过 Z-BlogPHP 插件可以扩展自定义 API 模块。本篇以 newapi 插件为例，演示如何挂载 API 模块与定义 api 命令。
+
 **使用 API 模块里的接口可以很方便的扩展出自定义的 API**
 
 本篇以`newapi`插件为例，扩展出一个`api模块`并定义一个`api命令`。
