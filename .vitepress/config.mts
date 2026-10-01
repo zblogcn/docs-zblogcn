@@ -1,6 +1,21 @@
+import { readdirSync } from 'node:fs'
+import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vitepress'
 import { MCPPlugin } from 'vitepress-plugin-mcp'
 import llmstxt from 'vitepress-plugin-llms'
+
+// 自动收集接口案例目录下的页面，供 llms.txt 分组使用；新增案例文件后无需修改配置
+// （llms 插件生成条目时取文件自身的标题与描述，这里的 text 仅用于侧边栏结构匹配）
+function collectExampleItems(dir: string, linkPrefix: string) {
+  const dirPath = fileURLToPath(new URL(`../src/${dir}`, import.meta.url))
+  return readdirSync(dirPath)
+    .filter((file) => file.endsWith('.md') && file !== 'index.md')
+    .sort()
+    .map((file) => {
+      const name = file.slice(0, -3)
+      return { text: name, link: `${linkPrefix}/${name}` }
+    })
+}
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -157,7 +172,19 @@ export default defineConfig({
         ignoreFiles: ['php/app-*/**/*.md', '**/terms/*.md', 'php/api-mods/**/*.md', 'php/api-common-template.md'],
         sidebar: (configSidebar) => [
           { text: 'Z-BlogPHP', link: '/php/', items: configSidebar?.['/php/'] ?? [] },
-          { text: 'Z-BlogASP', link: '/asp/', items: configSidebar?.['/asp/'] ?? [] }
+          { text: 'Z-BlogASP', link: '/asp/', items: configSidebar?.['/asp/'] ?? [] },
+          {
+            text: 'Z-BlogPHP 接口案例',
+            items: [
+              {
+                text: '后台子菜单',
+                items: [
+                  { text: '后台子菜单扩展案例', link: '/php/dev-examples/submenu' },
+                  ...collectExampleItems('php/dev-examples/submenu', '/php/dev-examples/submenu')
+                ]
+              }
+            ]
+          }
         ]
       })
     ]
