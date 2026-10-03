@@ -4,35 +4,12 @@
 
 | 接口                         | 参数             | 说明                           |
 | ---------------------------- | ---------------- | ------------------------------ |
-| Filter_Plugin_Admin_Header   |                  | 用于向后台「header」输出内容   |
-| Filter_Plugin_Admin_Footer   |                  | 用于向后台「footer」输出内容   |
-| Filter_Plugin_Admin_TopMenu  | `arr $topmenus`  | 用于向后台「顶部菜单」添加项目 |
-| Filter_Plugin_Admin_LeftMenu | `arr $leftmenus` | 用于向后台「侧栏菜单」添加项目 |
+| [Filter_Plugin_Admin_Header](/php/dev-examples/admin-global/header)   |                  | 用于向后台「header」输出内容   |
+| [Filter_Plugin_Admin_Footer](/php/dev-examples/admin-global/footer)   |                  | 用于向后台「footer」输出内容   |
+| [Filter_Plugin_Admin_TopMenu](/php/dev-examples/admin-global/top-menu)  | `arr $topmenus`  | 用于向后台「顶部菜单」添加项目 |
+| [Filter_Plugin_Admin_LeftMenu](/php/dev-examples/admin-global/left-menu) | `arr $leftmenus` | 用于向后台「侧栏菜单」添加项目 |
 
-<details>
-<summary>接口示例（点击展开）</summary>
 
-```php
-function ActivePlugin_demoAPP() {
-  Add_Filter_Plugin('Filter_Plugin_Admin_Header','demoAPP_Admin_Header');
-  Add_Filter_Plugin('Filter_Plugin_Admin_TopMenu','demoAPP_Admin_TopMenu');
-}
-function demoAPP_Admin_Header()
-{
-  global $zbp;
-  echo '<script src="' . $zbp->host . 'zb_users/plugin/demoAPP/script/plugin.js"></script>';
-  echo '<style type="text/css">#divMain2 {margin-bottom: 6rem;}</style>';
-}
-function demoAPP_Admin_TopMenu(&$topmenus)
-{
-  global $zbp;
-  $topmenus[] = MakeTopMenu("root", "demoAPP管理", $zbp->host . "zb_users/plugin/demoAPP/main.php", "", "");
-}
-// Filter_Plugin_Admin_Footer 和 Filter_Plugin_Admin_LeftMenu 同理；
-// 对应有 MakeLeftMenu() 函数可用
-```
-
-</details>
 
 ### 特定页 菜单管理 SubMenu
 
