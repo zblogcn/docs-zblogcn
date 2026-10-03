@@ -28,3 +28,18 @@ Z-BlogPHP 提供了多类插件接口供开发者扩展系统功能。本篇按�
 
 <!-- 「前台页面」相关 -->
 <!-- @include: ./app-20-interfaces/hook-view.md -->
+
+<!-- 「数据写入」相关 -->
+<!-- @include: ./app-20-interfaces/hook-data.md -->
+
+<!-- 「魔术方法」相关 -->
+<!-- @include: ./app-20-interfaces/hook-magic.md -->
+
+<!-- 「流程/事件」相关 -->
+<!-- @include: ./app-20-interfaces/hook-event.md -->
+
+<!-- 「模板」相关 -->
+<!-- @include: ./app-20-interfaces/hook-template.md -->
+
+<!-- 「API」相关 -->
+<!-- @include: ./app-20-interfaces/hook-api.md -->

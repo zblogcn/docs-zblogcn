@@ -47,6 +47,18 @@
 | [Filter_Plugin_Admin_UploadMng_Table](/php/dev-examples/admin-table/upload-mng) | `Upload &$upload, arr &$tabletds, arr &$tableths` | 附件管理页表格每行处理 |
 | [Filter_Plugin_Admin_TagMng_Table](/php/dev-examples/admin-table/tag-mng) | `Tag &$tag, arr &$tabletds, arr &$tableths` | 标签管理页表格每行处理 |
 
+### 特定页查询过滤
+
+| 接口 | 参数 | 说明 |
+| --- | --- | --- |
+| `Filter_Plugin_Admin_ArticleMng_Core` | `$s, $w, $or, $l, $op` | 文章管理页的核心接口（1.7 新加入） |
+| `Filter_Plugin_Admin_PageMng_Core` | `$s, $w, $or, $l, $op` | 页面管理页的核心接口（1.7 新加入） |
+| `Filter_Plugin_Admin_CommentMng_Core` | `$s, $w, $or, $l, $op` | 评论管理页的核心接口（1.7 新加入） |
+| `Filter_Plugin_Admin_CategoryMng_Core` | `$s, $w, $or, $l, $op` | 分类管理页的核心接口（1.7 新加入） |
+| `Filter_Plugin_Admin_MemberMng_Core` | `$s, $w, $or, $l, $op` | 会员管理页的核心接口（1.7 新加入） |
+| `Filter_Plugin_Admin_UploadMng_Core` | `$s, $w, $or, $l, $op` | 附件管理页的核心接口（1.7 新加入） |
+| `Filter_Plugin_Admin_TagMng_Core` | `$s, $w, $or, $l, $op` | 标签管理页的核心接口（1.7 新加入） |
+
 ### 特定页输出
 
 | 接口 | 参数 | 说明 |
