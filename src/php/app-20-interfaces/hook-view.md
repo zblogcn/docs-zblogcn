@@ -1,12 +1,12 @@
 ## 「前台页面」输出
 
-| 接口                                | 参数        | 说明 |
-| ----------------------------------- | ----------- | ---- |
-| Filter_Plugin_ViewList_Template     | `$template` |      |
-| Filter_Plugin_ViewPost_Template     | `$template` |      |
-| Filter_Plugin_ViewSearch_Template   | `$template` |      |
-| Filter_Plugin_ViewComments_Template | `$template` |      |
-| Filter_Plugin_ViewComment_Template  | `$template` |      |
+| 接口 | 参数 | 说明 |
+| --- | --- | --- |
+| [Filter_Plugin_ViewList_Template](/php/dev-examples/view-template/list) | `Template $template` | 列表页模板渲染前触发 |
+| [Filter_Plugin_ViewPost_Template](/php/dev-examples/view-template/post) | `Template $template` | 文章/页面详情页模板渲染前触发 |
+| [Filter_Plugin_ViewSearch_Template](/php/dev-examples/view-template/search) | `Template $template` | 搜索结果页模板渲染前触发 |
+| [Filter_Plugin_ViewComments_Template](/php/dev-examples/view-template/comments) | `Template $template` | 评论列表（AJAX）模板渲染前触发 |
+| [Filter_Plugin_ViewComment_Template](/php/dev-examples/view-template/comment) | `Template $template` | 单条评论（AJAX）模板渲染前触发 |
 
 ## 「前台页面」流程
 

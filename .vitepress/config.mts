@@ -16,6 +16,7 @@ const exampleGroupDefs: Array<{
   { dir: 'admin-table', label: '管理页表格列扩展' },
   { dir: 'admin-edit', label: '编辑页输出' },
   { dir: 'admin-process', label: '后台流程监听' },
+  { dir: 'view-template', label: '前台模板扩展' },
   {
     dir: 'submenu',
     label: '后台子菜单',
