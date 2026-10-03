@@ -49,19 +49,19 @@
 
 ### 特定页输出
 
-| 接口                                 | 参数 | 说明 |
-| ------------------------------------ | ---- | ---- |
-| Filter_Plugin_Edit_Begin             |
-| Filter_Plugin_Edit_End               |
-| Filter_Plugin_Edit_Response          |
-| Filter_Plugin_Edit_Response2         |
-| Filter_Plugin_Edit_Response4         |
-| Filter_Plugin_Edit_Response5         |
-| Filter_Plugin_Edit_Response3         |
-| Filter_Plugin_Category_Edit_Response |
-| Filter_Plugin_Tag_Edit_Response      |
-| Filter_Plugin_Member_Edit_Response   |
-| Filter_Plugin_Module_Edit_Response   |
+| 接口 | 参数 | 说明 |
+| --- | --- | --- |
+| [Filter_Plugin_Edit_Begin](/php/dev-examples/admin-edit/edit-begin) | | 文章/页面编辑页头部输出 |
+| [Filter_Plugin_Edit_End](/php/dev-examples/admin-edit/edit-end) | | 文章/页面编辑页尾部输出 |
+| [Filter_Plugin_Edit_Response](/php/dev-examples/admin-edit/edit-response) | | 编辑页正文编辑器之后输出 |
+| [Filter_Plugin_Edit_Response2](/php/dev-examples/admin-edit/edit-response2) | | 编辑页摘要编辑器之后输出 |
+| [Filter_Plugin_Edit_Response3](/php/dev-examples/admin-edit/edit-response3) | | 编辑页右侧发布栏输出 |
+| [Filter_Plugin_Edit_Response4](/php/dev-examples/admin-edit/edit-response4) | | 编辑页标题输入框之前输出 |
+| [Filter_Plugin_Edit_Response5](/php/dev-examples/admin-edit/edit-response5) | | 编辑页标题与正文之间输出 |
+| [Filter_Plugin_Category_Edit_Response](/php/dev-examples/admin-edit/category-edit-response) | | 分类编辑页表单字段之后输出 |
+| [Filter_Plugin_Tag_Edit_Response](/php/dev-examples/admin-edit/tag-edit-response) | | 标签编辑页表单字段之后输出 |
+| [Filter_Plugin_Member_Edit_Response](/php/dev-examples/admin-edit/member-edit-response) | | 用户编辑页表单字段之后输出 |
+| [Filter_Plugin_Module_Edit_Response](/php/dev-examples/admin-edit/module-edit-response) | | 模块编辑页表单字段之后输出 |
 
 ## 「管理页面」流程监听
 

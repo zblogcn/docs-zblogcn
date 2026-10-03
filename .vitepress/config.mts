@@ -14,6 +14,7 @@ const exampleGroupDefs: Array<{
 }> = [
   { dir: 'admin-global', label: '后台全局输出' },
   { dir: 'admin-table', label: '管理页表格列扩展' },
+  { dir: 'admin-edit', label: '编辑页输出' },
   {
     dir: 'submenu',
     label: '后台子菜单',
