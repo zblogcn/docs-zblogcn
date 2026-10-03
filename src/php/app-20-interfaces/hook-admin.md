@@ -65,8 +65,8 @@
 
 ## 「管理页面」流程监听
 
-| 接口                      | 参数 | 说明 |
-| ------------------------- | ---- | ---- |
-| Filter_Plugin_Admin_Begin |
-| Filter_Plugin_Admin_End   |
+| 接口 | 参数 | 说明 |
+| --- | --- | --- |
+| [Filter_Plugin_Admin_Begin](/php/dev-examples/admin-process/begin) | | 后台管理页启动时触发 |
+| [Filter_Plugin_Admin_End](/php/dev-examples/admin-process/end) | | 后台管理页输出完成后触发 |
 
