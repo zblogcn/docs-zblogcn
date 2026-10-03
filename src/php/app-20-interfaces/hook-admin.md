@@ -37,15 +37,15 @@
 
 ### 特定页表格过滤
 
-| 接口                                  | 参数 | 说明 |
-| ------------------------------------- | ---- | ---- |
-| Filter_Plugin_Admin_ArticleMng_Table  | `arr $article arr $tabletds arr $tableths` | 文章管理页表处理
-| Filter_Plugin_Admin_PageMng_Table     |
-| Filter_Plugin_Admin_CategoryMng_Table |
-| Filter_Plugin_Admin_CommentMng_Table  |
-| Filter_Plugin_Admin_MemberMng_Table   |
-| Filter_Plugin_Admin_UploadMng_Table   |
-| Filter_Plugin_Admin_TagMng_Table      |
+| 接口 | 参数 | 说明 |
+| --- | --- | --- |
+| [Filter_Plugin_Admin_ArticleMng_Table](/php/dev-examples/admin-table/article-mng) | `Post &$article, arr &$tabletds, arr &$tableths` | 文章管理页表格每行处理 |
+| [Filter_Plugin_Admin_PageMng_Table](/php/dev-examples/admin-table/page-mng) | `Post &$article, arr &$tabletds, arr &$tableths` | 页面管理页表格每行处理 |
+| [Filter_Plugin_Admin_CategoryMng_Table](/php/dev-examples/admin-table/category-mng) | `Category &$category, arr &$tabletds, arr &$tableths` | 分类管理页表格每行处理 |
+| [Filter_Plugin_Admin_CommentMng_Table](/php/dev-examples/admin-table/comment-mng) | `Comment &$cmt, arr &$tabletds, arr &$tableths, Post $article` | 评论管理页表格每行处理 |
+| [Filter_Plugin_Admin_MemberMng_Table](/php/dev-examples/admin-table/member-mng) | `Member &$member, arr &$tabletds, arr &$tableths` | 用户管理页表格每行处理 |
+| [Filter_Plugin_Admin_UploadMng_Table](/php/dev-examples/admin-table/upload-mng) | `Upload &$upload, arr &$tabletds, arr &$tableths` | 附件管理页表格每行处理 |
+| [Filter_Plugin_Admin_TagMng_Table](/php/dev-examples/admin-table/tag-mng) | `Tag &$tag, arr &$tabletds, arr &$tableths` | 标签管理页表格每行处理 |
 
 ### 特定页输出
 
