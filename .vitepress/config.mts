@@ -18,6 +18,10 @@ const exampleGroupDefs: Array<{
   { dir: 'admin-process', label: '后台流程监听' },
   { dir: 'view-template', label: '前台模板扩展' },
   { dir: 'view-flow', label: '前台流程监听' },
+  { dir: 'data', label: '数据写入处理' },
+  { dir: 'magic', label: '魔术方法扩展' },
+  { dir: 'event', label: '流程事件监听' },
+  { dir: 'template', label: '模板处理' },
   { dir: 'api', label: 'API 接口扩展' },
   {
     dir: 'submenu',
