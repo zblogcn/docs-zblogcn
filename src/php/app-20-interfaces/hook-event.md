@@ -30,7 +30,7 @@
 | [`Filter_Plugin_Zbp_LoadManage`](/php/dev-examples/event/zbp-load-manage) | | Zbp 类的后台管理初始加载接口 |
 | [`Filter_Plugin_Zbp_CheckSiteClosed`](/php/dev-examples/event/zbp-check-site-closed) | | Zbp 类的跳出关站检查接口 |
 | [`Filter_Plugin_Zbp_Terminate`](/php/dev-examples/event/zbp-terminate) | | Zbp 类的终结接口 |
-| [`Filter_Plugin_Zbp_ShowError`](/php/dev-examples/event/zbp-show-error) | | 1.7.3 已废弃，请使用 `Filter_Plugin_Debug_Handler_Common` 接口，参数不变 |
+| `Filter_Plugin_Zbp_ShowError` | | 1.7.3 已废弃，请使用 `Filter_Plugin_Debug_Handler_Common` 接口，参数不变 |
 | [`Filter_Plugin_Zbp_ShowValidCode`](/php/dev-examples/event/zbp-show-valid-code) | `$id` | Zbp 类的显示验证码接口，具有唯一性 |
 | [`Filter_Plugin_Zbp_CheckValidCode`](/php/dev-examples/event/zbp-check-valid-code) | `$vaidcode, $id` | Zbp 类的比对验证码接口，具有唯一性 |
 
@@ -38,7 +38,7 @@
 
 | 接口 | 参数 | 说明 |
 | --- | --- | --- |
-| [`Filter_Plugin_Debug_Handler`](/php/dev-examples/event/debug-handler) | | 1.7.3 已废弃，不应再使用 |
+| `Filter_Plugin_Debug_Handler` | | 1.7.3 已废弃，不应再使用 |
 | [`Filter_Plugin_Debug_Handler_ZEE`](/php/dev-examples/event/debug-handler-zee) | `$zee, $debug_type` | 定义 Debug_Exception_Handler、Debug_Error_Handler 函数的接口 |
 | [`Filter_Plugin_Debug_Handler_Common`](/php/dev-examples/event/debug-handler-common) | `int $errno, string $errstr, string $errfile, int $errline` | 这是 `Filter_Plugin_Zbp_ShowError` 接口的替代品，无须改动插件函数的参数 |
 | [`Filter_Plugin_Debug_Display`](/php/dev-examples/event/debug-display) | `$zec` | 定义 ZBlogException 的 Display 函数的接口（与 Handler 不同的是一个传入 zbp 异常类一个是控制类） |
