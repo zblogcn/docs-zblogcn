@@ -183,7 +183,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/zblogcn' }
+      { icon: 'github', link: 'https://github.com/zblogcn/docs-zblogcn' }
     ],
 
     footer: {
