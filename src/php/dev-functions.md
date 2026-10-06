@@ -1,15 +1,15 @@
 ---
 title: Z-BlogPHP 函数列表
-description: 介绍 Z-BlogPHP 封装的常用辅助函数，如 GetList 获取文章列表等，函数定义位于 zb_system/function/c_system_common.php。
+description: Z-BlogPHP 封装的全部辅助函数清单，涵盖 c_system_common.php 与 c_system_function.php，如 GetList 获取文章列表、GetVars 取值等。
 ---
 
 # 函数列表
 
 Z-BlogPHP 封装了众多辅助函数，文件路径为：「[zb_system/function/c_system_common.php](https://github1s.com/zblogcn/zblogphp/blob/master/zb_system/function/c_system_common.php "zb_system/function/c_system_common.php - GitHub1s") 」←此链接可直接在线查看；
 
-还有一些在`zb_system/function/c_system_function.php`，不过除了前两个外不太需要自行调用；
+还有一些在`zb_system/function/c_system_function.php`，除`GetPost()`、`GetList()`外多为系统内部路由、统计与模块构造调用；
 
-本章节会介绍一些相对常用的，具体定义可在文件中搜索查看。
+本章节依据 `Z-BlogPHP 1.7.5` 源码把两个文件中的函数全部列出（参数签名以源码为准），具体实现可在文件中搜索查看。
 
 ## GetList()
 
@@ -223,6 +223,9 @@ GetPHPVersion()
 #### 检查移动端
 `zbp_is_mobile`()
 
+#### 检查移动端（同上）
+`CheckIsMobile`()
+
 #### 通过 URL 获取远程页面内容
 `GetHttpContent`($url)
 
@@ -269,8 +272,17 @@ GetPHPVersion()
 
 ### 数组处理类函数
 
+#### 通过 Key 从数组获取数据
+`GetValueInArray`($array, $name, $default = null)
+
+#### 获取数组中当前元素（数组）的数据
+`GetValueInArrayByCurrent`($array, $name, $default = null)
+
 #### 获取$_GET, $_POST 等数组的参数值
 `GetVars`($name, $type = 'REQUEST', $default = null)
+
+#### 获取参数值（可设置默认返回值）——1.7 已废弃，改用 GetVars
+`GetVarsByDefault`($name, $type = 'REQUEST', $default = null)
 
 #### 从一系列指定的环境变量获得参数值
 `GetVarsFromEnv`($name, $source = '', $default = '')
@@ -340,6 +352,15 @@ GetPHPVersion()
 #### 实现 utf84mb4 的过滤
 `utf84mb_filter`(&$sql)
 
+#### utf84mb 的 fixHtmlSpecialChars 回调
+`utf84mb_fixHtmlSpecialChars`()
+
+#### utf84mb 转 UCS4 回调
+`utf84mb_convertToUCS4`($matches)
+
+#### UCS4 转 utf84mb 回调
+`utf84mb_convertToUTF8`($matches)
+
 #### 清除一串代码内所有的 PHP 代码
 `RemovePHPCode`($code)
 
@@ -348,6 +369,12 @@ GetPHPVersion()
 
 #### UCS-2BE 转 UTF-8，解决 JSON 中文转码问题
 `Ucs2Utf8`($matchs)
+
+#### 将 Null 转换为空字符串（适应 php 8.2）
+`Null2Empty`($s)
+
+#### 将序列化后的 string 还原为 array（自动判断 empty、null）
+`SerializeString2Array`($list)
 
 ### HTML 文本处理转换类函数
 
@@ -434,10 +461,13 @@ GetPHPVersion()
 #### 获取随机的 sqlite 数据库名
 `GetDbName`()
 
-### 安全检测判断类函数
+#### 环境变量获取辅助函数
+`Zbp_GetEnv`($item, $default = null)
 
-#### 简易版本的字符串加扰函数
-`zbp_string_auth_code`($data, $operation, $password, $additional = null)
+#### 环境变量设置辅助函数
+`Zbp_PutEnv`($item, $value)
+
+### 安全检测判断类函数
 
 #### 验证 Web Token 是否合法
 `VerifyWebToken`($webTokenString, $webTokenId, $key = '')
@@ -456,6 +486,140 @@ GetPHPVersion()
 
 #### zbp 限流函数 (依赖 zbp_cache 插件)
 `zbp_throttle`($name = 'default', $max_reqs = 60, $period = 60)
+
+#### 检查是否内网 IP
+`is_intranet_ip`($check_ip)
+
+#### 外部链接替换成内部链接
+`ReplaceExternalLink`($link)
+
+## function.php 函数简介
+
+### 文章获取函数
+
+#### 获取文章（详见上文 GetPost 章节）
+`GetPost`($idorname, $option = null)
+
+#### 获取文章列表（详见上文 GetList 章节）
+`GetList`($count = 10, $cate = null, $auth = null, $date = null, $tags = null, $search = null, $option = null)
+
+### 内置流程函数（Include_*）
+
+#### 显示 404 页面（内置插件函数）
+`Include_ShowError404`($errorCode, $errorDescription = null, $file = null, $line = null)
+
+#### 输出后台指定字体 family（内置插件函数）
+`Include_AddonAdminFont`()
+
+#### 批处理文章
+`Include_BatchPost_Article`($type)
+
+#### 批处理页面
+`Include_BatchPost_Page`($type)
+
+#### 首页 index.php 的结尾处理
+`Include_Index_End`()
+
+#### 首页 index.php 的开头处理
+`Include_Index_Begin`()
+
+#### “审核中会员”的前台权限拒绝验证
+`Include_Frontend_CheckRights`($action, $level)
+
+#### 在 ViewList、ViewPost 中对 view 权限进行验证
+`Include_ViewListPost_CheckRights_View`($route)
+
+### 数据过滤函数（Filter*）
+
+#### 过滤扩展数据
+`FilterMeta`(&$object)
+
+#### 过滤评论数据
+`FilterComment`(&$comment)
+
+#### 过滤文章数据
+`FilterPost`(&$article)
+
+#### 过滤用户数据
+`FilterMember`(&$member)
+
+#### 过滤模块数据
+`FilterModule`(&$module)
+
+#### 过滤分类数据
+`FilterCategory`(&$category)
+
+#### 过滤 tag 数据
+`FilterTag`(&$tag)
+
+### 数量统计函数（Count*）
+
+#### 统计置顶文章数组
+`CountTopPost`($type = 0, $addplus = null, $delplus = null)
+
+#### 统计评论数
+`CountCommentNums`($allplus = null, $chkplus = null)
+
+#### 统计公开文章数
+`CountNormalArticleNums`($plus = null)
+
+#### 统计文章下评论数
+`CountPost`(&$article, $plus = null)
+
+#### 批量统计指定文章下评论数并保存
+`CountPostArray`($array, $plus = null, $type = 0)
+
+#### 统计分类下文章数
+`CountCategory`(&$category, $plus = null, $type = 0)
+
+#### 批量统计指定分类下文章数并保存
+`CountCategoryArray`($array, $plus = null, $type = 0)
+
+#### 统计 tag 下的文章数
+`CountTag`(&$tag, $plus = null, $type = 0)
+
+#### 批量统计指定 tag 下文章数并保存
+`CountTagArrayString`($string, $plus = null, $articleid = null)
+
+#### 统计用户下的文章数、页面数、评论数、附件数等
+`CountMember`(&$member, $plus = array(null, null, null, null))
+
+#### 批量统计指定用户数据并保存
+`CountMemberArray`($array, $plus = array(null, null, null, null))
+
+### 内置模块构造函数（BuildModule_*）
+
+#### 文章目录模块
+`BuildModule_catalog`()
+
+#### 日历模块
+`BuildModule_calendar`($date = '')
+
+#### 最新评论模块
+`BuildModule_comments`()
+
+#### 上一篇/下一篇模块
+`BuildModule_previous`()
+
+#### 文章归档模块
+`BuildModule_archives`()
+
+#### 导航栏模块
+`BuildModule_navbar`()
+
+#### 标签云模块
+`BuildModule_tags`()
+
+#### 作者列表模块
+`BuildModule_authors`($level = 4)
+
+#### 站点统计模块
+`BuildModule_statistics`($array = array())
+
+### 升级修复函数
+
+#### 消除 1.6 升级 1.7 又退回 1.6 后再升级 1.7 出现的 bug
+`Fix_16_to_17_and_17_to_16_Error`()
 
 ## 加解密类的函数
 
