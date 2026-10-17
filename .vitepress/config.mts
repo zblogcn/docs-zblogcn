@@ -104,7 +104,6 @@ export default defineConfig({
             { text: '自定义数据类型', link: '/php/dev-custom-object' },
             { text: '网络组件', link: '/php/dev-network' },
             { text: '发布应用', link: '/php/dev-publish' },
-            { text: 'zbignore.txt 参考', link: '/php/guide/zbignore' },
             { text: '常见问题', link: '/php/dev-faq' }
           ]
         },
@@ -114,9 +113,9 @@ export default defineConfig({
             { text: '基本设计', link: '/php/api-design' },
             { text: '接口文档', link: '/php/api-mods' },
             { text: '自定义 API', link: '/php/api-custom' },
-            { text: '常见问题', link: '/php/api-faq' },
             { text: '本地调用 API', link: '/php/api-exec' },
-            { text: '调试插件', link: '/php/api-plugin' }
+            { text: '调试插件', link: '/php/api-plugin' },
+            { text: '常见问题', link: '/php/api-faq' }
           ]
         },
         {
