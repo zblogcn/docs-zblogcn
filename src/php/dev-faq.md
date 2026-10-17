@@ -17,8 +17,8 @@ description: 汇总 Z-BlogPHP 应用开发中的注意事项与常见问题，�
 7. 站内链接或路径须全部使用绝对地址：
      - PHP：`$zbp->host`、`$zbp->path`，也有专门的全局变量；
      - JS：`bloghost`；
-8. 对于服务器端发起的网络请求，请优先使用自带的`Network`；「[Network 参考](https://bbs.zblogcn.com/thread-102975.html#486171 "Network 参考")」
-9. 类似`.gitignore`，可以使用`zbignore.txt`对不需要打包进`zba`的文件进行排除；「[zbignore.txt 参考](https://bbs.zblogcn.com/thread-102780.html "zbignore.txt 参考")」
+8. 对于服务器端发起的网络请求，请优先使用自带的`Network`；「[网络组件](/php/dev-network "Z-BlogPHP 网络组件")」
+9. 类似`.gitignore`，可以使用`zbignore.txt`对不需要打包进`zba`的文件进行排除；「[zbignore.txt 参考](/php/guide/zbignore "Z-BlogPHP zbignore.txt 参考")」
 10. **理论上，「你」并没有在应用中自带`jQuery`必要；**
 11. 编辑器相关的插件要考虑通用性；
     - [Neditor 编辑器](https://app.zblogcn.com/?id=1379 "Neditor 编辑器")
@@ -42,7 +42,7 @@ description: 汇总 Z-BlogPHP 应用开发中的注意事项与常见问题，�
      - `'/中文/u'`——`u`修饰符用于匹配中文等；
      - 参考「[\[开发者\]正则表达式相关专贴-开发者中心](https://bbs.zblogcn.com/thread-101713.html "\[开发者\]正则表达式相关专贴-开发者中心")」
      - 参考「[PHP: 正则表达式模式中可用的模式修饰符 - php.net](https://www.php.net/manual/zh/reference.pcre.pattern.modifiers.php "PHP: 正则表达式模式中可用的模式修饰符 - php.net")」
-21.  logo，favicon，二维码等「替代性」文件不要走附件机制，尤其是不要捆绑编辑器上传；另外应利用`zbignore.txt`防止更新时被覆盖；参考「[配置图片上传](https://bbs.zblogcn.com/thread-101310.html#485997 "【开发者】大概算是进阶建议贴-开发者中心")」「[zbignore.txt 参考](https://bbs.zblogcn.com/thread-102780.html "zbignore.txt 参考")」
+21.  logo，favicon，二维码等「替代性」文件不要走附件机制，尤其是不要捆绑编辑器上传；另外应利用`zbignore.txt`防止更新时被覆盖；参考「[zbignore.txt 参考](/php/guide/zbignore "Z-BlogPHP zbignore.txt 参考")」
 22.  前台「站内链接」默认当前页打开；
      - 仅限「关于」「后台管理/登录」等少数情形可以例外；
 23.  在保存配置执行后，强烈建议用`$zbp->SetHint('good'); Redirect('./main.php');`而不是`$zbp->ShowHint('good');`；

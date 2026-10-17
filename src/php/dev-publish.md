@@ -45,7 +45,7 @@ Z-Blog 官方搭建的 [`Z-Blog 应用中心`](https://app.zblogcn.com/) 为广�
 4. 根据审核员的反馈意见逐条修改，并在社区帖子中更新；每次更新后附上修改记录（Changelog），方便审核员跟踪进度。「**会写更新记录很重要**」
 5. 加 QQ 群，积极询问进度；**「QQ 群：983356584」**
 
-①：还是建议外链，`docs/` 感觉打包进 .zba 不是很必要，虽然可以用 `zbignore.txt` 排除；
+①：还是建议外链，`docs/` 感觉打包进 .zba 不是很必要，虽然可以用 `zbignore.txt` 排除；「[zbignore.txt 参考](/php/guide/zbignore "Z-BlogPHP zbignore.txt 参考")」
 
 ### 审核流程
 

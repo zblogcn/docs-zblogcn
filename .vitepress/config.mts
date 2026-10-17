@@ -104,6 +104,7 @@ export default defineConfig({
             { text: '自定义数据类型', link: '/php/dev-custom-object' },
             { text: '网络组件', link: '/php/dev-network' },
             { text: '发布应用', link: '/php/dev-publish' },
+            { text: 'zbignore.txt 参考', link: '/php/guide/zbignore' },
             { text: '常见问题', link: '/php/dev-faq' }
           ]
         },
