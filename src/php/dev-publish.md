@@ -11,9 +11,9 @@ Z-Blog 官方搭建的 [`Z-Blog 应用中心`](https://app.zblogcn.com/) 为广�
 
 ## 成为开发者
 
-请在「[Z-Blog 开发者社区](https://bbs.zblogcn.com/)」发帖申请，完成入驻操作。
+请在「[开发者自动审核](https://cnb.cool/zblogcn/developer-application)」处提交应用信息。
 
-审核通过后给予开发者权限，之后可上传应用到「[应用中心](https://app.zblogcn.com/)」。
+提交后先由 AI 自动审核；AI 自动审核通过后，才会进入人工审核环节。人工审核通过后即给予开发者权限，之后可上传应用到「[应用中心](https://app.zblogcn.com/)」。
 
 **注：后续应用实行上传后审核发布。**
 
@@ -39,23 +39,17 @@ Z-Blog 官方搭建的 [`Z-Blog 应用中心`](https://app.zblogcn.com/) 为广�
 
 按照以下步骤进行申请：
 
-1. 为节省时间，请先参照「[注意事项速查表](https://docs.zblogcn.com/php/dev-faq#注意事项速查表 "注意事项速查表")」进行自查；
-2. 「可选」基本的 `README.md` 说明，如需附图可放在 `docs/` 目录内或者使用外链；<sup>①</sup>
-3. 在 Z-Blog 开发者社区发布一篇介绍文章，并附上代码仓库地址（推荐使用国内平台，如 [CNB](https://cnb.cool/)）；
-4. 根据审核员的反馈意见逐条修改，并在社区帖子中更新；每次更新后附上修改记录（Changelog），方便审核员跟踪进度。「**会写更新记录很重要**」
-5. 加 QQ 群，积极询问进度；**「QQ 群：983356584」**
+1. 在「[开发者自动审核](https://cnb.cool/zblogcn/developer-application)」处提交应用信息，提交后会先进行 AI 自动审核，通过后再转人工审核；
+2. 为节省时间，请先参照「[注意事项速查表](https://docs.zblogcn.com/php/dev-faq#注意事项速查表 "注意事项速查表")」进行自查；
+3. 「可选」基本的 `README.md` 说明，如需附图可放在 `docs/` 目录内或者使用外链；<sup>①</sup>
+
+4. 加 QQ 群，积极询问进度；**「QQ 群：983356584」**
 
 ①：还是建议外链，`docs/` 感觉打包进 .zba 不是很必要，虽然可以用 `zbignore.txt` 排除；「[zbignore.txt 参考](/php/guide/zbignore "Z-BlogPHP zbignore.txt 参考")」
-
-### 审核流程
-
-1. 在 Z-Blog 开发者社区提交应用后，会有审核员进行审核，并及时反馈审核意见，如有疑问可在 QQ 群沟通。
 
 </details>
 
 ## 发布标准
-
-> **推荐阅读：[注意事项速查表](https://docs.zblogcn.com/php/dev-faq#注意事项速查表 "常见问题")**
 
 <details>
 <summary>发布标准详情（点击展开）</summary>
