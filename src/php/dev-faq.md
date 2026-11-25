@@ -14,7 +14,7 @@ description: 汇总 Z-BlogPHP 应用开发中的注意事项与常见问题，�
 3. 自定义函数名、类名应以「应用 ID」开头或结尾，使用`_`分隔，建议放在开头；
 4. 自建表命名：`plugin_appID_表名` 或 `theme_appID_表名`，表前缀由系统自动附加；
 5. 自建模块命名：`plugin_appID_模块名` 或 `theme_appID_模块名`，这样管理起来更方便；
-7. 站内链接或路径须全部使用绝对地址：
+7. 实际站点可能不在根目录，尽量使用完整路径或明确的相对路径：
      - PHP：`$zbp->host`、`$zbp->path`，也有专门的全局变量；
      - JS：`bloghost`；
 8. 对于服务器端发起的网络请求，请优先使用自带的`Network`；「[网络组件](/php/dev-network "Z-BlogPHP 网络组件")」
