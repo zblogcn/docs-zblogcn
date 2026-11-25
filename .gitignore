@@ -3,5 +3,6 @@ dist/
 .env
 .vitepress/cache/
 .vitepress/dist/
+.history/
 .package-lock.json
 .vitepress/search-index.json
